@@ -32,7 +32,7 @@
 *.app
 
 # VS
-*.sin
+*.sln
 *.vcxproj
 *.filters
 *.user
