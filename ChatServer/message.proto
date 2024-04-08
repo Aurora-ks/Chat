@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package message;
+
+service Varify{
+    rpc GetVarifyCode (VarifyReq) returns (VarifyRes) {}
+}
+
+message VarifyReq{
+    string email = 1;
+}
+
+message VarifyRes{
+    int32 error = 1;
+    string email = 2;
+    string code = 3;
+}
