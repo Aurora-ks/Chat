@@ -1,7 +1,7 @@
 #include "Connection.h"
 #include "LogicSystem.h"
 
-Connection::Connection(tcp::socket socket) :socket_(std::move(socket))
+Connection::Connection(asio::io_context &ioc) :socket_(ioc)
 {}
 
 Connection::~Connection()
@@ -27,6 +27,11 @@ void Connection::start()
 		});
 }
 
+tcp::socket& Connection::socket()
+{
+	return socket_;
+}
+
 void Connection::HandleRequest()
 {
 	//设置回应版本
@@ -36,7 +41,7 @@ void Connection::HandleRequest()
 	//处理请求
 	if (request_.method() == http::verb::get)
 	{
-		bool success = LogicSystem::GetInstance()->GetHandle(request_.target(), shared_from_this());
+		bool success = LogicSystem::Instance()->GetHandle(request_.target(), shared_from_this());
 		response_.set(http::field::server, "MyServer");
 		if (!success)
 		{
@@ -52,7 +57,7 @@ void Connection::HandleRequest()
 	}
 	else if (request_.method() == http::verb::post)
 	{
-		bool success = LogicSystem::GetInstance()->PostHandle(request_.target(), shared_from_this());
+		bool success = LogicSystem::Instance()->PostHandle(request_.target(), shared_from_this());
 		response_.set(http::field::server, "MyServer");
 		if (!success)
 		{

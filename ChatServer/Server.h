@@ -14,6 +14,6 @@ public:
 	void start();
 private:
 	tcp::acceptor acceptor_;
-	tcp::socket socket_;
+	asio::io_context& ioc_;
 };
 

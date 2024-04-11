@@ -11,11 +11,12 @@ using tcp = boost::asio::ip::tcp;
 class LogicSystem;
 class Connection :public std::enable_shared_from_this<Connection>
 {
-	friend class LogicSystem;
 public:
-	Connection(tcp::socket socket);
+	Connection(asio::io_context &ioc);
 	~Connection();
 	void start();
+	tcp::socket& socket();
+
 private:
 	void HandleRequest();
 	void CheckTime();

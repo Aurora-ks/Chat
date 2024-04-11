@@ -39,15 +39,6 @@ LogicSystem::LogicSystem()
 		});
 }
 
-std::shared_ptr<LogicSystem> LogicSystem::GetInstance()
-{
-	static std::once_flag flag;
-	std::call_once(flag, [&]() {
-		instance_ = std::shared_ptr<LogicSystem>(new LogicSystem);
-		});
-	return instance_;
-}
-
 void LogicSystem::RegiserGetHandle(std::string url, HttpHandle handle)
 {
 	GetHandles_.insert({ url, handle });
