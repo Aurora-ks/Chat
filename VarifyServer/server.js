@@ -21,7 +21,7 @@ async function GetVarifyCode(call, callback) {
 	console.log("email is ", call.request.email);
 	try {
 		let code = await redis.get(call.request.email);
-		if(query === null){
+		if(code === null){
 			code = generateRandomNumber();
 			let res = await redis.SetExpire(call.request.email, code, 180);
 			if(!res){

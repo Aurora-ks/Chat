@@ -9,7 +9,7 @@ RegisterDialog::RegisterDialog(QWidget *parent)
 {
     ui->setupUi(this);
     connect(HttpManager::GetInstance().get(), &HttpManager::RegFinished, this, &RegisterDialog::DoRegFinished);
-
+    InitHandlers();
 }
 
 RegisterDialog::~RegisterDialog()
@@ -20,6 +20,32 @@ RegisterDialog::~RegisterDialog()
 void RegisterDialog::ShowState(QString str)
 {
     ui->StateLable->setText(str);
+}
+
+void RegisterDialog::InitHandlers()
+{
+    //获取验证码回调
+    handlers_.insert(RequestID::ID_GET_VARIFY_CODE, [this](QJsonObject jsonObj){
+        int error = jsonObj["error"].toInt();
+        if(error != ErrorCodes::SUCCESS){
+            ShowState(tr("数据错误"));
+            return;
+        }
+        auto email = jsonObj["email"].toString();
+        ShowState(tr("验证码发送成功"));
+    });
+
+    //注册用户回调
+    handlers_.insert(RequestID::ID_USER_REG, [this](QJsonObject jsonObj){
+        int error = jsonObj["error"].toInt();
+        if(error != ErrorCodes::SUCCESS){
+            ShowState(tr("注册失败"));
+            return;
+        }
+        auto email = jsonObj["email"].toString();
+        ShowState(tr("注册成功"));
+        qDebug() << "email: " << email;
+    });
 }
 
 void RegisterDialog::DoRegFinished(RequestID id, QString res, ErrorCodes err)
@@ -35,8 +61,8 @@ void RegisterDialog::DoRegFinished(RequestID id, QString res, ErrorCodes err)
         ShowState("json解析错误");
         return;
     }
-    // QJsonObject jsonObj = jsonDoc.object();
-    // Do Something...
+    //根据id调用对应的逻辑
+    handlers_[id](jsonDoc.object());
 }
 
 void RegisterDialog::on_GetCodeBtn_clicked()
@@ -49,12 +75,56 @@ void RegisterDialog::on_GetCodeBtn_clicked()
         //发送验证码
         QJsonObject jsonObj;
         jsonObj["email"] = email;
-        HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/varify"), jsonObj, RequestID::ID_GET_VARIFY_CODE);
-        ShowState("发送成功");
+        HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/varify"),
+                                                jsonObj, RequestID::ID_GET_VARIFY_CODE);
     }
     else
     {
         ShowState("邮箱不正确");
     }
+}
+
+
+void RegisterDialog::on_RegisterButton_clicked()
+{
+    if(ui->usrNameEdit->text() == ""){
+        ShowState(tr("用户名不能为空"));
+        return;
+    }
+
+    if(ui->EmailEdit->text() == ""){
+        ShowState(tr("邮箱不能为空"));
+        return;
+    }
+
+    if(ui->PwdEdit->text() == ""){
+        ShowState(tr("密码不能为空"));
+        return;
+    }
+
+    if(ui->Pwd1Edit->text() == ""){
+        ShowState(tr("确认密码不能为空"));
+        return;
+    }
+
+    if(ui->PwdEdit->text() != ui->Pwd1Edit->text()){
+        ShowState(tr("密码和确认密码不匹配"));
+        return;
+    }
+
+    if(ui->CodeEdit->text() == ""){
+        ShowState(tr("验证码不能为空"));
+        return;
+    }
+
+    //发送http请求注册用户
+    QJsonObject registerJson;
+    registerJson["user"] = ui->usrNameEdit->text();
+    registerJson["email"] = ui->EmailEdit->text();
+    registerJson["passwd"] = ui->PwdEdit->text();
+    registerJson["confirm"] = ui->Pwd1Edit->text();
+    registerJson["varifycode"] = ui->CodeEdit->text();
+    HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/register"),
+                                            registerJson, RequestID::ID_USER_REG);
 }
 

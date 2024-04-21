@@ -117,7 +117,11 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLineEdit" name="PwdEdit"/>
+       <widget class="QLineEdit" name="PwdEdit">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_2">
@@ -137,7 +141,11 @@
        <widget class="QLineEdit" name="EmailEdit"/>
       </item>
       <item row="3" column="1">
-       <widget class="QLineEdit" name="Pwd1Edit"/>
+       <widget class="QLineEdit" name="Pwd1Edit">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -190,14 +198,14 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="RegisterButton">
         <property name="text">
          <string>确认</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="CancelButton">
         <property name="text">
          <string>取消</string>
         </property>
@@ -225,5 +233,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>CancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>RegisterDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

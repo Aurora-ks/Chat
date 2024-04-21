@@ -16,11 +16,15 @@ public:
     ~RegisterDialog();
     void ShowState(QString str);
 private:
+    void InitHandlers();
+
     Ui::RegisterDialog *ui;
+    QMap<RequestID, std::function<void(const QJsonObject&)>> handlers_;
 public slots:
     void DoRegFinished(RequestID id, QString res, ErrorCodes err);
 private slots:
     void on_GetCodeBtn_clicked();
+    void on_RegisterButton_clicked();
 };
 
 #endif // REGISTERDIALOG_H
