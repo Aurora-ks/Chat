@@ -8,17 +8,15 @@
 #include "message.pb.h"
 #include "VarifyClient.h"
 
-std::shared_ptr<LogicSystem> LogicSystem::instance_ = nullptr;
-
 LogicSystem::LogicSystem()
 {
 	RegiserGetHandle("/test", [](std::shared_ptr<Connection> connection) {
-		beast::ostream(connection->response_.body()) << "receive get\r\n";
+		beast::ostream(connection->response().body()) << "receive get\r\n";
 		});
 	RegiserPostHandle("/varify", [](std::shared_ptr<Connection> connection) {
-		std::string BodyData = beast::buffers_to_string(connection->request_.body().data());
-		std::cout << "Receive From:" << connection->socket_.remote_endpoint().address().to_string() << "\nData: " << BodyData << std::endl;
-		connection->response_.set(http::field::content_type, "text/json");
+		std::string BodyData = beast::buffers_to_string(connection->request().body().data());
+		std::cout << "Receive From:" << connection->socket().remote_endpoint().address().to_string() << "\nData: " << BodyData << std::endl;
+		connection->response().set(http::field::content_type, "text/json");
 		Json::Value response;
 		Json::Reader reader;
 		Json::Value request;
@@ -34,7 +32,7 @@ LogicSystem::LogicSystem()
 			response["email"] = Json::Value(res.email());
 		}
 		std::string jsonstr = response.toStyledString();
-		beast::ostream(connection->response_.body()) << jsonstr;
+		beast::ostream(connection->response().body()) << jsonstr;
 		return true;
 		});
 }

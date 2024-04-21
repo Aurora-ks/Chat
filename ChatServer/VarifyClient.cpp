@@ -3,6 +3,9 @@
 
 std::shared_ptr<VarifyClient> VarifyClient::instance_ = nullptr;
 
+//TODO
+//增加多线程支持
+
 VarifyClient::VarifyClient()
 {
     std::shared_ptr<Channel> channel = grpc::CreateChannel("127.0.0.1:10086", grpc::InsecureChannelCredentials());
@@ -11,15 +14,11 @@ VarifyClient::VarifyClient()
 
 std::shared_ptr<VarifyClient> VarifyClient::GetInstance()
 {
-    std::once_flag flag;
+    static std::once_flag flag;
     std::call_once(flag, [&]() {
         instance_ = std::shared_ptr<VarifyClient>(new VarifyClient);
         });
     return instance_;
-    /*if (instance_ == nullptr) {
-        instance_ = std::shared_ptr<VarifyClient>(new VarifyClient);
-    }
-    return instance_;*/
 }
 
 VarifyRes VarifyClient::GetVarifyCode(std::string email)

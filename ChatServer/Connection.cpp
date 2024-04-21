@@ -32,6 +32,16 @@ tcp::socket& Connection::socket()
 	return socket_;
 }
 
+http::request<http::dynamic_body>& Connection::request()
+{
+	return request_;
+}
+
+http::response<http::dynamic_body>& Connection::response()
+{
+	return response_;
+}
+
 void Connection::HandleRequest()
 {
 	//设置回应版本
@@ -41,7 +51,7 @@ void Connection::HandleRequest()
 	//处理请求
 	if (request_.method() == http::verb::get)
 	{
-		bool success = LogicSystem::Instance()->GetHandle(request_.target(), shared_from_this());
+		bool success = LogicSystem::Instance().GetHandle(request_.target(), shared_from_this());
 		response_.set(http::field::server, "MyServer");
 		if (!success)
 		{
@@ -57,7 +67,7 @@ void Connection::HandleRequest()
 	}
 	else if (request_.method() == http::verb::post)
 	{
-		bool success = LogicSystem::Instance()->PostHandle(request_.target(), shared_from_this());
+		bool success = LogicSystem::Instance().PostHandle(request_.target(), shared_from_this());
 		response_.set(http::field::server, "MyServer");
 		if (!success)
 		{

@@ -1,0 +1,18 @@
+{
+    "server":{
+        "host":"127.0.0.1",
+        "port":10086
+    },
+    "varify":{
+        "host":"smtp.qq.com",
+        "port":465
+    },
+    "email":{
+        "user":"2736133099@qq.com",
+        "password":"vqdzxtoqbvcddeda"
+    },
+    "redis":{
+        "host":"127.0.0.1",
+        "port":6379
+    }
+}

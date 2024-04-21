@@ -8,15 +8,16 @@ namespace beast = boost::beast;
 namespace http = boost::beast::http;
 using tcp = boost::asio::ip::tcp;
 
-class LogicSystem;
 class Connection :public std::enable_shared_from_this<Connection>
 {
 public:
 	Connection(asio::io_context &ioc);
+
 	~Connection();
 	void start();
 	tcp::socket& socket();
-
+	http::request<http::dynamic_body>& request();
+	http::response<http::dynamic_body>& response();
 private:
 	void HandleRequest();
 	void CheckTime();

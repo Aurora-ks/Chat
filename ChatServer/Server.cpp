@@ -13,7 +13,7 @@ Server::Server(asio::io_context& ioc, unsigned int port)
 void Server::start()
 {
 	auto self = shared_from_this();
-	asio::io_context &NextContext = ioContextPool::Instance()->NextContext();
+	asio::io_context &NextContext = ioContextPool::Instance().NextContext();
 	std::shared_ptr<Connection> NewConnection = std::make_shared<Connection>(NextContext);
 	acceptor_.async_accept(NewConnection->socket(), [self, NewConnection](const boost::system::error_code& ec) {
 		try {
