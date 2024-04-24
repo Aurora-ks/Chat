@@ -13,6 +13,11 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Network)
 
+INCLUDE_DIRECTORIES(
+    ${PROJECT_SOURCE_DIR}
+)
+
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -29,6 +34,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         registerdialog.h registerdialog.cpp registerdialog.ui
         logindialog.h logindialog.cpp logindialog.ui
         httpmanager.h httpmanager.cpp
+        verificationbtn.h verificationbtn.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
