@@ -19,7 +19,6 @@ public:
 
 	ioContext& NextContext();
 
-	void ForceStop();
 private:
 	void stop();
 

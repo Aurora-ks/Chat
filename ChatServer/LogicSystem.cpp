@@ -4,6 +4,7 @@
 #include "message.pb.h"
 #include "VarifyClient.h"
 #include "RedisManager.h"
+#include "MysqlDao.h"
 
 #include <mutex>
 #include <json/json.h>
@@ -47,6 +48,7 @@ LogicSystem::LogicSystem()
 	RegiserPostHandle("/register", [](shared_ptr<Connection> connection)
 		{
 			auto data = beast::buffers_to_string(connection->request().body().data());
+			//Debug
 			cout << "receive " << data << endl;
 			connection->request().set(http::field::content_type, "text/json");
 
@@ -59,26 +61,46 @@ LogicSystem::LogicSystem()
 				beast::ostream(connection->response().body()) << root.toStyledString();
 				return;
 			}
+
+			string name = parsed["user"].asString();
+			string password = parsed["password"].asString();
+			string email = parsed["email"].asString();
+			string confirm = parsed["confirm"].asString();
+
+			//验证码过期
 			auto VarifyCode = RedisManager::Instance().GetRedis().get(parsed["email"].asString());
 			if (!VarifyCode)
 			{
+				//Debug
 				cout << "Get Varifycode Expired\n";
 				root["error"] = ErrorCodes::VarifyExpired;
 				beast::ostream(connection->response().body()) << root.toStyledString();
 				return;
 			}
+			//验证码不匹配
 			if (*VarifyCode != parsed["varifycode"].asString())
 			{
+				//Debug
 				cout << "Varifycode Error\n";
 				root["error"] = ErrorCodes::VarifyCodeErr;
 				beast::ostream(connection->response().body()) << root.toStyledString();
 				return;
 			}
+			//用户名是否存在
+			int uid = MysqlDao().UserRegister(name, password, email);
+			if (uid == 0 || uid == -1)
+			{
+				//Debug
+				cout << "user or email exist\n";
+				root["error"] = ErrorCodes::UserExist;
+				beast::ostream(connection->response().body()) << root.toStyledString();
+				return;
+			}
 			root["error"] = ErrorCodes::SUCCESS;
-			root["email"] = parsed["email"];
-			root["user"] = parsed["user"].asString();
-			root["password"] = parsed["password"].asString();
-			root["confirm"] = parsed["confirm"].asString();
+			root["email"] = email;
+			root["user"] = name;
+			root["password"] = password;
+			root["confirm"] = confirm;
 			root["varifycode"] = parsed["varifycode"].asString();
 			beast::ostream(connection->response().body()) << root.toStyledString();
 		});

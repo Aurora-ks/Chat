@@ -30,11 +30,6 @@ boost::asio::io_context& ioContextPool::NextContext()
 	return context;
 }
 
-void ioContextPool::ForceStop()
-{
-	stop();
-}
-
 void ioContextPool::stop()
 {
 	if (running_)

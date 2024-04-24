@@ -11,7 +11,7 @@ int main()
 		asio::signal_set signals(ioc, SIGINT, SIGTERM);
 		signals.async_wait([&ioc](boost::system::error_code ec, int signal) {
 			ioc.stop();
-			ioContextPool::Instance().ForceStop();
+			exit(0);
 			});
 		std::make_shared<Server>(ioc, port)->start();
 		ioc.run();
