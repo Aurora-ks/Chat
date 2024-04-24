@@ -20,11 +20,13 @@ LogicSystem::LogicSystem()
 		{
 			beast::ostream(connection->response().body()) << "receive get\r\n";
 		});
-
+	// 获取验证码
 	RegiserPostHandle("/varify", [](shared_ptr<Connection> connection)
 		{
 			string BodyData = beast::buffers_to_string(connection->request().body().data());
-			cout << "Receive From:" << connection->socket().remote_endpoint().address().to_string() << "\nData: " << BodyData << endl;
+			// Debug
+			cout << "Data: " << BodyData << endl;
+
 			connection->response().set(http::field::content_type, "text/json");
 			Json::Value response;
 			Json::Reader reader;
@@ -44,46 +46,46 @@ LogicSystem::LogicSystem()
 			string jsonstr = response.toStyledString();
 			beast::ostream(connection->response().body()) << jsonstr;
 		});
-
+	// 注册
 	RegiserPostHandle("/register", [](shared_ptr<Connection> connection)
 		{
-			auto data = beast::buffers_to_string(connection->request().body().data());
+			string data = beast::buffers_to_string(connection->request().body().data());
 			//Debug
 			cout << "receive " << data << endl;
-			connection->request().set(http::field::content_type, "text/json");
 
-			Json::Value root;
-			Json::Value parsed;
+			connection->request().set(http::field::content_type, "text/json");
+			Json::Value response;
+			Json::Value request;
 			Json::Reader reader;
-			if (!reader.parse(data, parsed))
+			if (!reader.parse(data, request))
 			{
-				root["error"] = ErrorCodes::ERR_JSON;
-				beast::ostream(connection->response().body()) << root.toStyledString();
+				response["error"] = ErrorCodes::ERR_JSON;
+				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
 
-			string name = parsed["user"].asString();
-			string password = parsed["password"].asString();
-			string email = parsed["email"].asString();
-			string confirm = parsed["confirm"].asString();
+			string name = request["user"].asString();
+			string password = request["password"].asString();
+			string email = request["email"].asString();
+			string confirm = request["confirm"].asString();
 
 			//验证码过期
-			auto VarifyCode = RedisManager::Instance().GetRedis().get(parsed["email"].asString());
+			auto VarifyCode = RedisManager::Instance().GetRedis().get(request["email"].asString());
 			if (!VarifyCode)
 			{
 				//Debug
 				cout << "Get Varifycode Expired\n";
-				root["error"] = ErrorCodes::VarifyExpired;
-				beast::ostream(connection->response().body()) << root.toStyledString();
+				response["error"] = ErrorCodes::VarifyExpired;
+				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
 			//验证码不匹配
-			if (*VarifyCode != parsed["varifycode"].asString())
+			if (*VarifyCode != request["varifycode"].asString())
 			{
 				//Debug
 				cout << "Varifycode Error\n";
-				root["error"] = ErrorCodes::VarifyCodeErr;
-				beast::ostream(connection->response().body()) << root.toStyledString();
+				response["error"] = ErrorCodes::VarifyCodeErr;
+				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
 			//用户名是否存在
@@ -92,17 +94,39 @@ LogicSystem::LogicSystem()
 			{
 				//Debug
 				cout << "user or email exist\n";
-				root["error"] = ErrorCodes::UserExist;
-				beast::ostream(connection->response().body()) << root.toStyledString();
+				response["error"] = ErrorCodes::UserExist;
+				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
-			root["error"] = ErrorCodes::SUCCESS;
-			root["email"] = email;
-			root["user"] = name;
-			root["password"] = password;
-			root["confirm"] = confirm;
-			root["varifycode"] = parsed["varifycode"].asString();
-			beast::ostream(connection->response().body()) << root.toStyledString();
+			response["error"] = ErrorCodes::SUCCESS;
+			response["email"] = email;
+			response["user"] = name;
+			response["password"] = password;
+			response["confirm"] = confirm;
+			response["varifycode"] = request["varifycode"].asString();
+			beast::ostream(connection->response().body()) << response.toStyledString();
+		});
+	// 登录
+	RegiserPostHandle("/login", [](shared_ptr<Connection> connection)
+		{
+			string data = beast::buffers_to_string(connection->request().body().data());
+			//Debug
+			cout << "receive " << data << endl;
+
+			connection->response().set(http::field::content_type, "text/json");
+			Json::Value response;
+			Json::Reader reader;
+			Json::Value request;
+			if (!reader.parse(data, request))
+			{
+				response["error"] = ErrorCodes::ERR_JSON;
+				beast::ostream(connection->response().body()) << response.toStyledString();
+				return;
+			}
+
+			string name = request["usr"].asString();
+			string password = request["password"].asString();
+
 		});
 }
 
