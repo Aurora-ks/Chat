@@ -58,4 +58,8 @@ void HttpManager::SendFinished(RequestID id, QString res, ErrorCodes err)
     {
         emit RegFinished(id, res, err);
     }
+    else if(id == RequestID::ID_USER_LOGIN)
+    {
+        emit LoginFinished(id, res, err);
+    }
 }

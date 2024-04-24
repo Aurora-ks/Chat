@@ -2,12 +2,14 @@
 #include "ui_registerdialog.h"
 #include <QUrl>
 #include <QSettings>
+#include <QTimer>
 
 RegisterDialog::RegisterDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::RegisterDialog)
 {
     ui->setupUi(this);
+    connect(ui->CancelButton, &QPushButton::clicked, this, &RegisterDialog::SwitchLogin);
     connect(HttpManager::GetInstance().get(), &HttpManager::RegFinished, this, &RegisterDialog::DoRegFinished);
     InitHandlers();
 }
@@ -31,7 +33,6 @@ void RegisterDialog::InitHandlers()
             ShowState(tr("数据错误"));
             return;
         }
-        auto email = jsonObj["email"].toString();
         ShowState(tr("验证码发送成功"));
     });
 
@@ -43,8 +44,14 @@ void RegisterDialog::InitHandlers()
             return;
         }
         auto email = jsonObj["email"].toString();
-        ShowState(tr("注册成功"));
         qDebug() << "email: " << email;
+        ShowState(tr("注册成功, 3s后自动返回登录界面"));
+        QTimer *timer = new QTimer(this);
+        QObject::connect(timer, &QTimer::timeout, this, [this, timer]{
+            timer->stop();
+            this->accept();
+        });
+        timer->start(3000);
     });
 }
 
@@ -87,6 +94,7 @@ void RegisterDialog::on_GetCodeBtn_clicked()
 
 void RegisterDialog::on_RegisterButton_clicked()
 {
+    //TODO use "QLineEdit::editingFinished" signal to check
     if(ui->usrNameEdit->text() == ""){
         ShowState(tr("用户名不能为空"));
         return;
@@ -121,10 +129,28 @@ void RegisterDialog::on_RegisterButton_clicked()
     QJsonObject registerJson;
     registerJson["user"] = ui->usrNameEdit->text();
     registerJson["email"] = ui->EmailEdit->text();
-    registerJson["passwd"] = ui->PwdEdit->text();
+    registerJson["password"] = ui->PwdEdit->text();
     registerJson["confirm"] = ui->Pwd1Edit->text();
     registerJson["varifycode"] = ui->CodeEdit->text();
     HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/register"),
                                             registerJson, RequestID::ID_USER_REG);
+}
+
+
+void RegisterDialog::on_showPwd_toggled(bool checked)
+{
+    if(checked)
+        ui->PwdEdit->setEchoMode(QLineEdit::Normal);
+    else
+        ui->PwdEdit->setEchoMode(QLineEdit::Password);
+}
+
+
+void RegisterDialog::on_showPwd1_toggled(bool checked)
+{
+    if(checked)
+        ui->Pwd1Edit->setEchoMode(QLineEdit::Normal);
+    else
+        ui->Pwd1Edit->setEchoMode(QLineEdit::Password);
 }
 

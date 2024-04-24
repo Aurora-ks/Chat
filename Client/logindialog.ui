@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>328</width>
-    <height>208</height>
+    <width>402</width>
+    <height>274</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,59 +18,38 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>328</width>
-    <height>208</height>
+    <width>402</width>
+    <height>274</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>328</width>
-    <height>208</height>
+    <width>402</width>
+    <height>274</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetDefaultConstraint</enum>
+   </property>
    <property name="topMargin">
-    <number>8</number>
+    <number>6</number>
    </property>
    <item>
     <widget class="QWidget" name="widget" native="true">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0">
       <property name="verticalSpacing">
        <number>8</number>
       </property>
-      <item row="1" column="1">
-       <widget class="QLabel" name="pwdlabel">
-        <property name="text">
-         <string>密码： </string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLineEdit" name="userEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="userlabel">
-        <property name="text">
-         <string>用户名： </string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="3">
        <spacer name="horizontalSpacer_4">
         <property name="orientation">
@@ -103,10 +82,41 @@
         </property>
        </spacer>
       </item>
-      <item row="1" column="2">
+      <item row="2" column="2">
        <widget class="QLineEdit" name="passwordEdit">
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="userEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="pwdlabel">
+        <property name="text">
+         <string>密码： </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="userlabel">
+        <property name="text">
+         <string>用户名： </string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QCheckBox" name="showPwd">
+        <property name="text">
+         <string>显示密码</string>
         </property>
        </widget>
       </item>
@@ -114,9 +124,31 @@
     </widget>
    </item>
    <item>
+    <widget class="QLabel" name="stateLable">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QWidget" name="widget_2" native="true">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -125,22 +157,21 @@
       <property name="spacing">
        <number>9</number>
       </property>
-      <property name="leftMargin">
-       <number>6</number>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
       </property>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QPushButton" name="LoginButton">
         <property name="text">
@@ -156,17 +187,11 @@
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+       <widget class="QPushButton" name="resetPwdButton">
+        <property name="text">
+         <string>忘记密码</string>
         </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
+       </widget>
       </item>
      </layout>
     </widget>

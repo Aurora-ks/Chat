@@ -13,6 +13,7 @@
 enum RequestID{
     ID_GET_VARIFY_CODE = 1001, //获取验证码
     ID_USER_REG = 1002, //用户注册
+    ID_USER_LOGIN = 1003, //用户登录
 };
 
 enum ErrorCodes{
@@ -29,16 +30,21 @@ public:
     HttpManager(const HttpManager&) = delete;
     HttpManager& operator =(const HttpManager&) = delete;
     ~HttpManager() = default;
+
     static std::shared_ptr<HttpManager> GetInstance();
     static QString GetPrefix();
+
 private:
     HttpManager();
     void SendFinished(RequestID id, QString res, ErrorCodes err);
+
     QNetworkAccessManager NetManager_;
     static std::shared_ptr<HttpManager> instance_;
     static QString urlPrefix;
+
 signals:
     void RegFinished(RequestID id, QString res, ErrorCodes err);
+    void LoginFinished(RequestID id, QString res, ErrorCodes err);
 };
 
 #endif // HTTPMANAGER_H
