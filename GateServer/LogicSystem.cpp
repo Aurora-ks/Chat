@@ -3,6 +3,7 @@
 #include "ErrorCodes.h"
 #include "message.pb.h"
 #include "VarifyClient.h"
+#include "StatusGrpcClient.h"
 #include "RedisManager.h"
 #include "MysqlDao.h"
 
@@ -33,8 +34,9 @@ LogicSystem::LogicSystem()
 			Json::Value request;
 			if (!reader.parse(BodyData, request) || !request.isMember("email"))
 			{
+				// Debug
 				cout << "Json Parse Failed! " << reader.getFormattedErrorMessages() << endl;
-				response["error"] = Json::Value(ErrorCodes::ERR_JSON);
+				response["error"] = Json::Value(ErrorCodes::JsonErr);
 			}
 			else
 			{
@@ -59,7 +61,7 @@ LogicSystem::LogicSystem()
 			Json::Reader reader;
 			if (!reader.parse(data, request))
 			{
-				response["error"] = ErrorCodes::ERR_JSON;
+				response["error"] = ErrorCodes::JsonErr;
 				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
@@ -89,7 +91,7 @@ LogicSystem::LogicSystem()
 				return;
 			}
 			//用户名是否存在
-			int uid = MysqlDao().UserRegister(name, password, email);
+			int uid = MysqlDao::Instance().UserRegister(name, password, email);
 			if (uid == 0 || uid == -1)
 			{
 				//Debug
@@ -119,14 +121,41 @@ LogicSystem::LogicSystem()
 			Json::Value request;
 			if (!reader.parse(data, request))
 			{
-				response["error"] = ErrorCodes::ERR_JSON;
+				response["error"] = ErrorCodes::JsonErr;
 				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
 
-			string name = request["usr"].asString();
+			string name = request["user"].asString();
 			string password = request["password"].asString();
+			UserInfo userInfo;
+			//查询数据库
+			if (!MysqlDao::Instance().UserLogin(name, password, userInfo))
+			{
+				response["error"] = ErrorCodes::PasswordErr;
+				beast::ostream(connection->response().body()) << response.toStyledString();
+				return;
+			}
+			//获取ChatServer
+			auto res = StatusGrpcClient::Instance().GetChatServer(userInfo.uid);
+			if (res.error())
+			{
+				// Debug
+				cout << "get chat server failed: " << res.error() << endl;
+				response["error"] = ErrorCodes::RPCGetFailed;
+				beast::ostream(connection->response().body()) << response.toStyledString();
+				return;
+			}
 
+			// Debug
+			cout << "get get chat server success uid: " << userInfo.uid << endl;
+
+			response["error"] = ErrorCodes::SUCCESS;
+			response["uid"] = userInfo.uid;
+			response["user"] = name;
+			response["host"] = res.host();
+			response["token"] = res.token();
+			beast::ostream(connection->response().body()) << response.toStyledString();
 		});
 }
 

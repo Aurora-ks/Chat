@@ -32,7 +32,7 @@ VarifyRes VarifyClient::GetVarifyCode(std::string email)
         response.set_error(ErrorCodes::SUCCESS);
     }
     else {
-        response.set_error(ErrorCodes::ERR_RPC);
+        response.set_error(ErrorCodes::RPCErr);
     }
     return response;
 }

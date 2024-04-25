@@ -69,5 +69,11 @@ void LoginDialog::on_LoginButton_clicked()
         ShowState(tr("用户名或密码为空"));
         return;
     }
+
+    QJsonObject json;
+    json["user"] = usr;
+    json["password"] = password;
+    HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/login"),
+                                            json, RequestID::ID_USER_LOGIN);
 }
 

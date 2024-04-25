@@ -6,7 +6,7 @@ Connection::Connection(asio::io_context &ioc) :socket_(ioc)
 
 Connection::~Connection()
 {
-	std::cout << socket_.remote_endpoint().address().to_string() << " Close\n";
+	//std::cout << socket_.remote_endpoint().address().to_string() << " Close\n";
 }
 
 void Connection::start()

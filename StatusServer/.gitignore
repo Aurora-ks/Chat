@@ -39,4 +39,4 @@
 *.props
 .vs
 x64
-GateServer
+StatusServer
