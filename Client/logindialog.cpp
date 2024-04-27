@@ -1,15 +1,20 @@
 #include "logindialog.h"
 #include "ui_logindialog.h"
+#include "httpmanager.h"
+#include "tcpmanager.h"
 
 //TODO add change password
 
 LoginDialog::LoginDialog(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::LoginDialog)
+    , ui(new Ui::LoginDialog),
+    uid_(0),
 {
     ui->setupUi(this);
     connect(ui->RegisterButton, &QPushButton::clicked, this, &LoginDialog::SwitchResister);
     connect(HttpManager::GetInstance().get(), &HttpManager::LoginFinished, this, &LoginDialog::DoLoginFinished);
+    connect(this, &LoginDialog::ConnectToTcp, &TcpManager::Instance(), &TcpManager::OnConnect);
+    connect(&TcpManager::Instance(), &TcpManager::connected, this, &LoginDialog::DoConnected);
     InitHandlers();
 }
 
@@ -27,9 +32,20 @@ void LoginDialog::InitHandlers()
             ShowState(tr("数据错误"));
             return;
         }
+        ServerInfo s;
+        s.host = jsonObj["host"].toString();
+        s.port = jsonObj["port"].toString();
+        s.token = jsonObj["token"].toString();
+        s.uid = jsonObj["uid"].toInt();
+
+        uid_ = s.uid;
+        token_ = s.token;
+
+        TcpManager::Instance().OnConnect(s);
+        // emit ConnectToTcp(s);
         // Debug
-        ShowState("登录成功");
-        qDebug() << jsonObj["user"].toString();
+        // ShowState("登录成功");
+        // qDebug() << jsonObj["user"].toString();
     });
 }
 
@@ -52,6 +68,24 @@ void LoginDialog::DoLoginFinished(RequestID id, QString res, ErrorCodes err)
         return;
     }
     handlers_[id](jsonDoc.object());
+}
+
+void LoginDialog::DoConnected(bool success)
+{
+    if(success)
+    {
+        QJsonObject json;
+        json["uid"] = uid_;
+        json["token"] = token_;
+
+        QJsonDocument doc(json);
+        QString data = doc.toJson();
+        TcpManager::Instance().SendData(RequestID::ID_USER_LOGIN, data);
+    }
+    else
+    {
+        ShowState(tr("登录失败"));
+    }
 }
 
 void LoginDialog::on_showPwd_toggled(bool checked)
