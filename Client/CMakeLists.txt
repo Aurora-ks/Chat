@@ -35,9 +35,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         logindialog.h logindialog.cpp logindialog.ui
         httpmanager.h httpmanager.cpp
         verificationbtn.h verificationbtn.cpp
-        Singleton.h
-        tcpmanager.h tcpmanager.cpp
-        types.h
 
     )
 # Define target properties for Android with Qt 6 as:
