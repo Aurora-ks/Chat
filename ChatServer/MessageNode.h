@@ -1,14 +1,18 @@
 #pragma once
+#include <string>
+
 class LogicSystem;
 class Connection;
 
 class MessageNode
 {
 	friend class Connection;
+	friend class LogicSystem;
 public:
 	MessageNode(int len);
 	~MessageNode();
 	void clear();
+	std::string DataToString() const;
 protected:
 	char* data_;
 	int CurentIndex_;
@@ -31,4 +35,9 @@ public:
 	SendNode(const char* data, int len, int id);
 private:
 	int id_;
+};
+
+enum MessageID
+{
+	LOGIN_CHAT = 1003
 };

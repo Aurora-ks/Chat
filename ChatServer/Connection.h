@@ -17,16 +17,21 @@ public:
 
 	tcp::socket& socket();
 	std::string& uuid();
+	CServer* server();
 
 	void AsyncReadHeader(int len);
 	void AsyncReadBody(int len);
-	void AsyncRead(size_t HasRead, size_t len, std::function<void(const boost::system::error_code&, size_t)> handler);
+	void send(const std::string& msg, unsigned short id);
+	void send(const char* msg, int len, unsigned short id);
 private:
 	void AsyncReadAll(int len, std::function<void(const boost::system::error_code&, size_t)> handler);
-	
+	void AsyncRead(size_t HasRead, size_t len, std::function<void(const boost::system::error_code&, size_t)> handler);
+	void HandleWrite(const boost::system::error_code& error, std::shared_ptr<Connection> shared_self);
+
+	enum { MAX_LEN = 2048 };
 	tcp::socket socket_;
 	std::string uuid_;
-	char data_[2048];
+	char data_[MAX_LEN];
 	CServer *server_;
 	bool closed_;
 	bool ParsedHeadr_;

@@ -154,6 +154,7 @@ LogicSystem::LogicSystem()
 			response["uid"] = userInfo.uid;
 			response["user"] = name;
 			response["host"] = res.host();
+			response["port"] = res.port();
 			response["token"] = res.token();
 			beast::ostream(connection->response().body()) << response.toStyledString();
 		});

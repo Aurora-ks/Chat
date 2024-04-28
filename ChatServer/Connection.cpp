@@ -12,12 +12,13 @@ const int HEAD_LEN = 4;
 const int HEAD_ID_LEN = 2;
 const int HEAD_DATA_LEN = 2;
 
-Connection::Connection(boost::asio::io_context& ioc, CServer *server)
-:socket_(ioc),
-server_(server),
-closed_(false),
-ParsedHeadr_(false),
-HeaderNode_(make_shared<MessageNode>(HEAD_LEN))
+Connection::Connection(boost::asio::io_context& ioc, CServer* server)
+	:socket_(ioc),
+	data_{ 0 },
+	server_(server),
+	closed_(false),
+	ParsedHeadr_(false),
+	HeaderNode_(make_shared<MessageNode>(HEAD_LEN))
 {
 	boost::uuids::uuid uuid = boost::uuids::random_generator()();
 	uuid_ = boost::uuids::to_string(uuid);
@@ -28,6 +29,12 @@ void Connection::start()
 	AsyncReadHeader(HEAD_LEN);
 }
 
+void Connection::close()
+{
+	socket_.close();
+	closed_ = true;
+}
+
 tcp::socket& Connection::socket()
 {
 	return socket_;
@@ -36,6 +43,11 @@ tcp::socket& Connection::socket()
 string& Connection::uuid()
 {
 	return uuid_;
+}
+
+CServer* Connection::server()
+{
+	return server_;
 }
 
 void Connection::AsyncReadHeader(int len)
@@ -103,7 +115,7 @@ void Connection::AsyncReadBody(int len)
 			ReceiveNode_->data_[ReceiveNode_->length_] = '\0';
 			//Debug
 			cout << "received: " << ReceiveNode_->data_ << endl;
-			LogicSystem::Instance().PostMessage(make_shared<LogicNode>(self, ReceiveNode_));
+			LogicSystem::Instance().post(make_shared<LogicNode>(self, ReceiveNode_));
 			AsyncReadHeader(HEAD_LEN);
 		}
 		catch (exception& e)
@@ -111,6 +123,29 @@ void Connection::AsyncReadBody(int len)
 			cout << "Read Body Exception: " << e.what() << endl;
 		}
 		});
+}
+
+void Connection::send(const std::string& msg, unsigned short id)
+{
+	send(msg.c_str(), msg.size(), id);
+}
+
+void Connection::send(const char* msg, int len, unsigned short id)
+{
+	lock_guard<mutex> lock(mutex_);
+	int size = queue_.size();
+	queue_.emplace(make_shared<SendNode>(msg, len, id));
+	if (size > 0) return;
+	auto node = queue_.front();
+	boost::asio::async_write(socket_, boost::asio::buffer(node->data_, node->length_),
+		bind(&Connection::HandleWrite, this, placeholders::_1, shared_from_this()));
+
+}
+
+void Connection::AsyncReadAll(int len, std::function<void(const boost::system::error_code&, size_t)> handler)
+{
+	memset(data_, 0, sizeof(data_));
+	AsyncRead(0, len, handler);
 }
 
 void Connection::AsyncRead(size_t HasRead, size_t len, function<void(const boost::system::error_code&, size_t)> handler)
@@ -125,7 +160,7 @@ void Connection::AsyncRead(size_t HasRead, size_t len, function<void(const boost
 				return;
 			}
 			//读取了足够长度的数据
-			if(HasRead + bytesTransfered >= len)
+			if (HasRead + bytesTransfered >= len)
 			{
 				handler(ec, HasRead + bytesTransfered);
 				return;
@@ -135,10 +170,32 @@ void Connection::AsyncRead(size_t HasRead, size_t len, function<void(const boost
 		});
 }
 
-void Connection::AsyncReadAll(int len, std::function<void(const boost::system::error_code&, size_t)> handler)
+void Connection::HandleWrite(const boost::system::error_code& error, std::shared_ptr<Connection> shared_self)
 {
-	memset(data_, 0, sizeof(data_));
-	AsyncRead(0, len, handler);
+	try
+	{
+		if (error)
+		{
+			cout << "Connection Write Error: " << error.what() << endl;
+			close();
+			server_->RemoveConnetion(uuid_);
+		}
+		else
+		{
+			lock_guard<mutex> lock(mutex_);
+			queue_.pop();
+			if (!queue_.empty())
+			{
+				auto node = queue_.front();
+				boost::asio::async_write(socket_, boost::asio::buffer(node->data_, node->length_),
+					bind(&Connection::HandleWrite, this, placeholders::_1, shared_from_this()));
+			}
+		}
+	}
+	catch (exception& e)
+	{
+		cout << "Connection Write Exception: " << e.what() << endl;
+	}
 }
 
 LogicNode::LogicNode(std::shared_ptr<Connection> con, std::shared_ptr<ReceiveNode> msg)

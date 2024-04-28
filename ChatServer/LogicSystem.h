@@ -6,6 +6,7 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include <functional>
 
 class LogicNode;
 class Connection;
@@ -14,12 +15,14 @@ class LogicSystem : public Singleton<LogicSystem>
 {
 	friend class Singleton<LogicSystem>;
 public:
-	void PostMessage(std::shared_ptr<LogicNode> LogicNode);
+	~LogicSystem();
+	void post(std::shared_ptr<LogicNode> LogicNode);
 private:
-	using callback = std::function<void(std::shared_ptr<Connection>, const unsigned short id, const string& data)>;
+	using callback = std::function<void(std::shared_ptr<Connection>, const std::string&)>;
 
 	LogicSystem();
-	void RegisterHandle(callback);
+	void RegisterHandle();
+	void ConsumeMessage();
 	bool running_;
 	std::thread thread_;
 	std::queue<std::shared_ptr<LogicNode>> queue_;

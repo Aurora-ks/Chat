@@ -19,6 +19,11 @@ void CServer::start()
 	acceptor_.async_accept(con->socket(), bind(&CServer::HandleAccept, this, con, placeholders::_1));
 }
 
+void CServer::AddConnectionId(int id, std::string uuid)
+{
+	connectionsId_.emplace(id, uuid);
+}
+
 void CServer::RemoveConnetion(std::string uuid)
 {
 	lock_guard<mutex> lock(mutex_);

@@ -3,7 +3,7 @@
 #include <boost/asio.hpp>
 
 MessageNode::MessageNode(int len)
-	:data_(new char[len+1]),
+	:data_(new char[len*2]),
 	CurentIndex_(0),
 	length_(len)
 {
@@ -18,7 +18,12 @@ MessageNode::~MessageNode()
 void MessageNode::clear()
 {
 	CurentIndex_ = 0;
-	memset(data_, 0, sizeof(data_));
+	memset(data_, 0, length_);
+}
+
+std::string MessageNode::DataToString() const
+{
+	return std::string(data_, length_);
 }
 
 ReceiveNode::ReceiveNode(int len, int id)
@@ -28,7 +33,7 @@ ReceiveNode::ReceiveNode(int len, int id)
 }
 
 SendNode::SendNode(const char* data, int len, int id)
-	:MessageNode(len),
+	:MessageNode(len + 4),
 	id_(id)
 {
 	//TODO replace magic number

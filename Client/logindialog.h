@@ -24,12 +24,15 @@ private:
 
     Ui::LoginDialog *ui;
     QMap<RequestID, std::function<void(const QJsonObject&)>> handlers_;
-
+    quint16 uid_;
+    QString token_;
 signals:
     void SwitchResister();
 
 private slots:
     void DoLoginFinished(RequestID id, QString res, ErrorCodes err);
+    void DoConnected(bool success);
+    void LoginSuccess(bool success);
     void on_showPwd_toggled(bool checked);
     void on_LoginButton_clicked();
 };
