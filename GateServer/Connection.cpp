@@ -1,12 +1,14 @@
 #include "Connection.h"
 #include "LogicSystem.h"
 
-Connection::Connection(asio::io_context &ioc) :socket_(ioc)
+Connection::Connection(asio::io_context &ioc)
+	:socket_(ioc),
+	timer_(socket_.get_executor(), std::chrono::seconds(30))
 {}
 
 Connection::~Connection()
 {
-	//std::cout << socket_.remote_endpoint().address().to_string() << " Close\n";
+	std::cout << "Close\n";
 }
 
 void Connection::start()
@@ -51,8 +53,9 @@ void Connection::HandleRequest()
 	//处理请求
 	if (request_.method() == http::verb::get)
 	{
+		//TODO decode url
 		bool success = LogicSystem::Instance().GetHandle(request_.target(), shared_from_this());
-		response_.set(http::field::server, "MyServer");
+		response_.set(http::field::server, "GateServer");
 		if (!success)
 		{
 			response_.result(http::status::not_found);
@@ -68,7 +71,7 @@ void Connection::HandleRequest()
 	else if (request_.method() == http::verb::post)
 	{
 		bool success = LogicSystem::Instance().PostHandle(request_.target(), shared_from_this());
-		response_.set(http::field::server, "MyServer");
+		response_.set(http::field::server, "GateServer");
 		if (!success)
 		{
 			response_.result(http::status::not_found);
@@ -90,7 +93,8 @@ void Connection::CheckTime()
 		if (!ec) {
 			//发送数据超时，服务器主动关闭
 			//有隐患，服务器主动关闭会出现closewait
-			self->socket_.close(ec);
+			self->socket_.shutdown(tcp::socket::shutdown_both);
+			self->socket_.close();
 		}
 		});
 }

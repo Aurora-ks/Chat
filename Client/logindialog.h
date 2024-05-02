@@ -24,10 +24,12 @@ private:
 
     Ui::LoginDialog *ui;
     QMap<RequestID, std::function<void(const QJsonObject&)>> handlers_;
+    QString name_;
     quint16 uid_;
     QString token_;
 signals:
     void SwitchResister();
+    void SwitchToMain(QString, int);
 
 private slots:
     void DoLoginFinished(RequestID id, QString res, ErrorCodes err);

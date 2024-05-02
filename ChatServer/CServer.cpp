@@ -21,13 +21,15 @@ void CServer::start()
 
 void CServer::AddConnectionId(int id, std::string uuid)
 {
+	lock_guard<mutex> lock(mutex_);
 	connectionsId_.emplace(id, uuid);
 }
 
-void CServer::RemoveConnetion(std::string uuid)
+void CServer::RemoveConnetion(int id, std::string uuid)
 {
 	lock_guard<mutex> lock(mutex_);
 	connections_.erase(uuid);
+	connectionsId_.erase(id);
 }
 
 void CServer::HandleAccept(shared_ptr<Connection> con, const boost::system::error_code& error)

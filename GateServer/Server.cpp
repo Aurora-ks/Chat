@@ -19,11 +19,11 @@ void Server::start()
 		try {
 			//如果出错，则放弃此连接
 			if (ec) {
-				std::cout << "Accept " << ec.message() << std::endl;
+				std::cout << "Accept Error: " << ec.message() << std::endl;
 				self->start();
 				return;
 			}
-			std::cout << "Accept " << NewConnection->socket().remote_endpoint().address().to_string() << std::endl;
+			std::cout << "Accept " << NewConnection->socket().remote_endpoint().address().to_string() << ":" << NewConnection->socket().remote_endpoint().port() << std::endl;
 			NewConnection->start();
 			self->start();
 		}

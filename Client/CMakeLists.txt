@@ -30,7 +30,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         resource.qrc
-
         registerdialog.h registerdialog.cpp registerdialog.ui
         logindialog.h logindialog.cpp logindialog.ui
         httpmanager.h httpmanager.cpp
@@ -38,6 +37,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Singleton.h
         tcpmanager.h tcpmanager.cpp
         types.h
+        personlist.h personlist.cpp
+        chatwindow.h chatwindow.cpp chatwindow.ui
+        chatmessage.h chatmessage.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

@@ -5,7 +5,7 @@
 #include <json/json.h>
 #include <json/reader.h>
 #include <json/value.h>
-
+#include <iostream>
 using namespace std;
 
 LogicSystem::LogicSystem()
@@ -24,15 +24,26 @@ void LogicSystem::RegisterHandle()
 		if (!reader.parse(data, request))
 		{
 			response["error"] = ErrorCodes::JsonErr;
-			return;
 		}
 		else
 		{
 			int uid = request["uid"].asInt();
 			con->server()->AddConnectionId(uid, con->uuid());
+			con->SetUserId(uid);
 			response["error"] = ErrorCodes::SUCCESS;
 		}
 		con->send(response.toStyledString(), LOGIN_CHAT);
+		});
+	handlers_.emplace(CHAT, [this](shared_ptr<Connection> con, const std::string& data) {
+		Json::Value request;
+		Json::Value response;
+		Json::Reader reader;
+		if (!reader.parse(data, request)) return;
+		int id_to = request["id_to"].asInt();
+		auto i = con->server()->connectionsId_.find(id_to);
+		if (i == con->server()->connectionsId_.end()) return;
+		auto des = con->server()->connections_.at(i->second);
+		des->send(data, CHAT);
 		});
 }
 

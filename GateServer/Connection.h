@@ -26,6 +26,6 @@ private:
 	beast::flat_buffer buffer_{ 4096 };
 	http::request<http::dynamic_body> request_;
 	http::response<http::dynamic_body> response_;
-	asio::steady_timer timer_{ socket_.get_executor(), std::chrono::seconds(30) };
+	asio::steady_timer timer_;
 };
 

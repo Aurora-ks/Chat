@@ -35,31 +35,64 @@ void HttpManager::PostRequest(QUrl url, QJsonObject &json, RequestID reqID)
     request.setHeader(QNetworkRequest::ContentLengthHeader, QByteArray::number(data.length()));
     //发送请求
     auto self = shared_from_this();
-    QNetworkReply* reply = NetManager_.post(request, data);
-    connect(reply, &QNetworkReply::finished, this, [reply, reqID, self](){
+    QNetworkAccessManager *NetManager = new QNetworkAccessManager();
+    QNetworkReply* reply = NetManager->post(request, data);
+    connect(reply, &QNetworkReply::finished, this, [NetManager, reply, reqID, self](){
         //处理错误
         if(reply->error() != QNetworkReply::NoError)
         {
-            qDebug() << reply->errorString();
             self->SendFinished(reqID, "", ErrorCodes::ERR_NETWORK);
             reply->deleteLater();
+            NetManager->deleteLater();
             return;
         }
         //读出请求
         QString res = reply->readAll();
         self->SendFinished(reqID, res, ErrorCodes::SUCCESS);
         reply->deleteLater();
+        NetManager->deleteLater();
+    });
+}
+
+void HttpManager::GetRequest(QUrl url, RequestID reqID)
+{
+    QNetworkRequest request(url);
+    auto self = shared_from_this();
+    QNetworkAccessManager *NetManager = new QNetworkAccessManager();
+    QNetworkReply* reply = NetManager->get(request);
+    connect(reply, &QNetworkReply::finished, this, [NetManager, reply, reqID, self](){
+        //处理错误
+        if(reply->error() != QNetworkReply::NoError)
+        {
+            self->SendFinished(reqID, "", ErrorCodes::ERR_NETWORK);
+            reply->deleteLater();
+            NetManager->deleteLater();
+            return;
+        }
+        //读出请求
+        QString res = reply->readAll();
+        self->SendFinished(reqID, res, ErrorCodes::SUCCESS);
+        reply->deleteLater();
+        NetManager->deleteLater();
     });
 }
 
 void HttpManager::SendFinished(RequestID id, QString res, ErrorCodes err)
 {
-    if(id == RequestID::ID_USER_REG | id == RequestID::ID_GET_VARIFY_CODE)
-    {
+    switch (id) {
+    case ID_USER_REG:
+    case ID_GET_VARIFY_CODE:
         emit RegFinished(id, res, err);
-    }
-    else if(id == RequestID::ID_USER_LOGIN)
-    {
+        break;
+    case ID_USER_LOGIN:
         emit LoginFinished(id, res, err);
+        break;
+    case ID_USER_GET_PERSON_LIST:
+    case ID_ADD_PERSON:
+    case ID_DEL_PERSON:
+        emit ChatSendFinished(id, res, err);
+        break;
+    default:
+        break;
     }
 }

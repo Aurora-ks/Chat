@@ -26,11 +26,12 @@ private:
 
 public slots:
     void OnConnect(ServerInfo);
-    void OnSendData(RequestID, QString);
+    void OnSendData(RequestID, QJsonObject);
 signals:
     void connected(bool);
-    void SendData(RequestID, QString);
+    void SendData(RequestID, QJsonObject);
     void LoginSuccess(bool);
+    void ReceivedMessage(RequestID, QJsonObject);
 };
 
 #endif // TCPMANAGER_H

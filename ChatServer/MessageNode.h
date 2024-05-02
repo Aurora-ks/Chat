@@ -10,7 +10,7 @@ class MessageNode
 	friend class LogicSystem;
 public:
 	MessageNode(int len);
-	~MessageNode();
+	virtual ~MessageNode();
 	void clear();
 	std::string DataToString() const;
 protected:
@@ -39,5 +39,6 @@ private:
 
 enum MessageID
 {
-	LOGIN_CHAT = 1003
+	LOGIN_CHAT = 1004,
+	CHAT = 2000
 };

@@ -16,6 +16,8 @@ class HttpManager : public QObject, public std::enable_shared_from_this<HttpMana
     Q_OBJECT
 public:
     void PostRequest(QUrl url, QJsonObject& json, RequestID reqID);
+    void GetRequest(QUrl url, RequestID reqID);
+
     HttpManager(const HttpManager&) = delete;
     HttpManager& operator =(const HttpManager&) = delete;
     ~HttpManager() = default;
@@ -27,13 +29,13 @@ private:
     HttpManager();
     void SendFinished(RequestID id, QString res, ErrorCodes err);
 
-    QNetworkAccessManager NetManager_;
     static std::shared_ptr<HttpManager> instance_;
     static QString urlPrefix;
 
 signals:
     void RegFinished(RequestID id, QString res, ErrorCodes err);
     void LoginFinished(RequestID id, QString res, ErrorCodes err);
+    void ChatSendFinished(RequestID id, QString res, ErrorCodes err);
 };
 
 #endif // HTTPMANAGER_H

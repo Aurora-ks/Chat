@@ -14,19 +14,15 @@
 
 using namespace std;
 
+
 LogicSystem::LogicSystem()
 {
-	// For Test
-	RegiserGetHandle("/test", [](shared_ptr<Connection> connection)
-		{
-			beast::ostream(connection->response().body()) << "receive get\r\n";
-		});
 	// 获取验证码
-	RegiserPostHandle("/varify", [](shared_ptr<Connection> connection)
+	RegiserPostHandle("/varify", [](ConnectionPtr connection)
 		{
 			string BodyData = beast::buffers_to_string(connection->request().body().data());
 			// Debug
-			cout << "Data: " << BodyData << endl;
+			cout << "Receive: " << BodyData << endl;
 
 			connection->response().set(http::field::content_type, "text/json");
 			Json::Value response;
@@ -49,11 +45,11 @@ LogicSystem::LogicSystem()
 			beast::ostream(connection->response().body()) << jsonstr;
 		});
 	// 注册
-	RegiserPostHandle("/register", [](shared_ptr<Connection> connection)
+	RegiserPostHandle("/register", [](ConnectionPtr connection)
 		{
 			string data = beast::buffers_to_string(connection->request().body().data());
 			//Debug
-			cout << "receive " << data << endl;
+			cout << "receive: " << data << endl;
 
 			connection->request().set(http::field::content_type, "text/json");
 			Json::Value response;
@@ -109,11 +105,11 @@ LogicSystem::LogicSystem()
 			beast::ostream(connection->response().body()) << response.toStyledString();
 		});
 	// 登录
-	RegiserPostHandle("/login", [](shared_ptr<Connection> connection)
+	RegiserPostHandle("/login", [](ConnectionPtr connection)
 		{
 			string data = beast::buffers_to_string(connection->request().body().data());
 			//Debug
-			cout << "receive " << data << endl;
+			cout << "receive: " << data << endl;
 
 			connection->response().set(http::field::content_type, "text/json");
 			Json::Value response;
@@ -158,6 +154,93 @@ LogicSystem::LogicSystem()
 			response["token"] = res.token();
 			beast::ostream(connection->response().body()) << response.toStyledString();
 		});
+	//获取好友列表
+	//TODO use get request
+	RegiserPostHandle("/get-friend", [](ConnectionPtr connection) {
+		string data = beast::buffers_to_string(connection->request().body().data());
+		//Debug
+		cout << "receive: " << data << endl;
+		connection->response().set(http::field::content_type, "text/json");
+		Json::Value response;
+		Json::Reader reader;
+		Json::Value request(Json::arrayValue);
+		if (!reader.parse(data, request))
+		{
+			response["error"] = ErrorCodes::JsonErr;
+			beast::ostream(connection->response().body()) << response.toStyledString();
+			return;
+		}
+
+		int user_id = request["uid"].asInt();
+		auto res = MysqlDao::Instance().GetFriend(user_id);
+		if (res.empty())
+		{
+			response["error"] = ErrorCodes::UserNotExist;
+		}
+		else
+		{
+			response["error"] = ErrorCodes::SUCCESS;
+			for (const auto& i : res)
+			{
+				Json::Value t;
+				t["uid"] = i.at("uid");
+				t["user_name"] = i.at("user_name");
+				response["arr"].append(t);
+			}
+		}
+		beast::ostream(connection->response().body()) << response.toStyledString();
+		});
+	//添加好友
+	RegiserPostHandle("/add-person", [](ConnectionPtr connection) {
+		string data = beast::buffers_to_string(connection->request().body().data());
+		//Debug
+		cout << "receive: " << data << endl;
+		connection->response().set(http::field::content_type, "text/json");
+		Json::Value response;
+		Json::Reader reader;
+		Json::Value request;
+		if (!reader.parse(data, request))
+		{
+			response["error"] = ErrorCodes::JsonErr;
+			beast::ostream(connection->response().body()) << response.toStyledString();
+			return;
+		}
+
+		string name = request["user"].asString();
+		int uid = request["uid"].asInt();
+		int res = MysqlDao::Instance().AddFriend(name, uid);
+		if (res == -1 || res == -3) response["error"] = ErrorCodes::SQLErr;
+		else if (res == -2) response["error"] = ErrorCodes::UserNotExist;
+		else response["error"] = ErrorCodes::SUCCESS;
+		response["uid"] = res;
+		response["user_name"] = name;
+		beast::ostream(connection->response().body()) << response.toStyledString();
+		});
+	//删除好友
+	RegiserPostHandle("/del-friend", [](ConnectionPtr connection) {
+		string data = beast::buffers_to_string(connection->request().body().data());
+		//Debug
+		cout << "receive: " << data << endl;
+		connection->response().set(http::field::content_type, "text/json");
+		Json::Value response;
+		Json::Reader reader;
+		Json::Value request;
+		if (!reader.parse(data, request))
+		{
+			response["error"] = ErrorCodes::JsonErr;
+			beast::ostream(connection->response().body()) << response.toStyledString();
+			return;
+		}
+
+		int user_id = request["user_id"].asInt();
+		int friend_id = request["friend_id"].asInt();
+		if (user_id > friend_id) swap(user_id, friend_id);
+		if (MysqlDao::Instance().DelFriend(user_id, friend_id))
+			response["error"] = ErrorCodes::SUCCESS;
+		else
+			response["error"] = ErrorCodes::SQLErr;
+		beast::ostream(connection->response().body()) << response.toStyledString();
+		});
 }
 
 void LogicSystem::RegiserGetHandle(string url, HttpHandle handle)
@@ -170,7 +253,7 @@ void LogicSystem::RegiserPostHandle(string url, HttpHandle handle)
 	PostHandles_.insert({ url, handle });
 }
 
-bool LogicSystem::GetHandle(string str, shared_ptr<Connection> connection)
+bool LogicSystem::GetHandle(string str, ConnectionPtr connection)
 {
 	//不存在对应的处理函数
 	if (GetHandles_.find(str) == GetHandles_.end()) return false;
@@ -179,7 +262,7 @@ bool LogicSystem::GetHandle(string str, shared_ptr<Connection> connection)
 	return true;
 }
 
-bool LogicSystem::PostHandle(string str, shared_ptr<Connection> connection)
+bool LogicSystem::PostHandle(string str, ConnectionPtr connection)
 {
 	//不存在对应的处理函数
 	if (PostHandles_.find(str) == PostHandles_.end()) return false;

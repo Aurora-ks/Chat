@@ -26,7 +26,7 @@ ioContextPool::~ioContextPool()
 boost::asio::io_context& ioContextPool::NextContext()
 {
 	auto& context = ioContexts_[NextIO_++];
-	if (NextIO_ == ioContexts_.size()) NextIO_ = 0;
+	if (NextIO_ >= ioContexts_.size()) NextIO_ = 0;
 	return context;
 }
 

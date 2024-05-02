@@ -56,7 +56,10 @@ void LoginDialog::ShowState(const QString &msg)
 
 void LoginDialog::LoginSuccess(bool success)
 {
-    if(success) accept();
+    if(success){
+        emit SwitchToMain(name_, uid_);
+        accept();
+    }
     else ui->StateLabel->setText(tr("登录失败"));
 }
 
@@ -85,8 +88,9 @@ void LoginDialog::DoConnected(bool success)
         json["token"] = token_;
 
         QJsonDocument doc(json);
-        QString data = doc.toJson();
-        emit TcpManager::Instance().SendData(RequestID::ID_USER_LOGIN, data);
+        // QString data = QString::fromUtf8(doc.toJson());
+        // emit TcpManager::Instance().SendData(RequestID::ID_USER_LOGIN, data);
+        emit TcpManager::Instance().SendData(RequestID::ID_USER_LOGIN, json);
     }
     else
     {
@@ -109,7 +113,7 @@ void LoginDialog::on_LoginButton_clicked()
         ShowState(tr("用户名或密码为空"));
         return;
     }
-
+    name_ = usr;
     QJsonObject json;
     json["user"] = usr;
     json["password"] = password;

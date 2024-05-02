@@ -3,7 +3,7 @@
 #include <boost/asio.hpp>
 
 MessageNode::MessageNode(int len)
-	:data_(new char[len*2]),
+	:data_(new char[len+1]),
 	CurentIndex_(0),
 	length_(len)
 {
