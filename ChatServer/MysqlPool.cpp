@@ -25,7 +25,7 @@ MysqlPool::MysqlPool(const std::string& url, const std::string& usr, const std::
 	//TODO use log to print
 	catch (SQLException& e)
 	{
-		cerr << "MysqlPool Create Exception\n";
+		cerr << "MysqlPool Create Exception: " << e.what() << endl;
 	}
 }
 
