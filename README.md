@@ -27,7 +27,7 @@
    - 安装Redis
    - 启动Redis服务
    - 安装node.js
-   - 在VarifyServer目录下执行命令
+   - 在VerifyServer目录下执行命令
    ```powershell
    npm install
    npm run server
