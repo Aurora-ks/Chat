@@ -24,6 +24,8 @@
 # 使用
 
 - Windows
+   - 安装Redis
+   - 启动Redis服务
    - 安装node.js
    - 在VarifyServer目录下执行命令
    ```powershell
@@ -33,8 +35,7 @@
 
    - 安装Mysql
    - 确保账户名为root，密码为123456，在项目根目录下执行命令`mysql -u root -p 123456 <mysql.sql`
-   - 安装Redis
-   - 启动Redis服务
+
    - 进入build-win_x64目录依次启动服务
 # 开发环境
 
