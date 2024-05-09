@@ -34,7 +34,7 @@
    ```
 
    - 安装Mysql
-   - 确保账户名为root，密码为123456，在项目根目录下执行命令`mysql -u root -p 123456 <mysql.sql`
+   - 确保账户名为root，密码为123456，在项目根目录下使用cmd执行命令`mysql -uroot -p123456 <mysql.sql`
 
    - 进入build-win_x64目录依次启动服务
 # 开发环境
