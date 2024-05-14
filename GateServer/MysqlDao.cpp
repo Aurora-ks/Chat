@@ -7,9 +7,10 @@ using PreparedStatementPtr = unique_ptr<PreparedStatement>;
 using ResultSetPtr = unique_ptr<ResultSet>;
 
 MysqlDao::MysqlDao()
+	:pool_(new MysqlPool("tcp://127.0.0.1:3306/chat", "root", "123456", 3))
 {
 	//TODO use configuration files to read settings
-	pool_.reset(new MysqlPool("tcp://127.0.0.1/chat", "root", "123456", 3));
+	//pool_.reset(new MysqlPool("tcp://127.0.0.1:3306/chat", "root", "123456", 3));
 }
 
 MysqlDao::~MysqlDao()
