@@ -10,11 +10,11 @@ StatusGrpcClient::StatusGrpcClient()
 	stub_ = StatusService::NewStub(channel);
 }
 
-GetStatusServiceRes StatusGrpcClient::GetChatServer(int uid)
+GetChatServerRes StatusGrpcClient::GetChatServer(int uid)
 {
 	ClientContext context;
-	GetStatusServiceReq req;
-	GetStatusServiceRes res;
+	GetChatServerReq req;
+	GetChatServerRes res;
 	req.set_uid(uid);
 	Status status = stub_->GetChatServer(&context, req, &res);
 	if (status.ok()) return res;
@@ -23,5 +23,4 @@ GetStatusServiceRes StatusGrpcClient::GetChatServer(int uid)
 		res.set_error(ErrorCodes::RPCErr);
 		return res;
 	}
-	return GetStatusServiceRes();
 }

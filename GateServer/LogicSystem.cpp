@@ -2,7 +2,7 @@
 #include "Connection.h"
 #include "ErrorCodes.h"
 #include "message.pb.h"
-#include "VarifyClient.h"
+#include "VerifyClient.h"
 #include "StatusGrpcClient.h"
 #include "RedisManager.h"
 #include "MysqlDao.h"
@@ -18,7 +18,7 @@ using namespace std;
 LogicSystem::LogicSystem()
 {
 	// 获取验证码
-	RegiserPostHandle("/varify", [](ConnectionPtr connection)
+	RegiserPostHandle("/verify", [](ConnectionPtr connection)
 		{
 			string BodyData = beast::buffers_to_string(connection->request().body().data());
 			// Debug
@@ -37,7 +37,7 @@ LogicSystem::LogicSystem()
 			else
 			{
 				string email = request["email"].asString();
-				message::VarifyRes res = VarifyClient::GetInstance()->GetVarifyCode(email);
+				message::VerifyRes res = VerifyClient::GetInstance()->GetVerifyCode(email);
 				response["error"] = Json::Value(res.error());
 				response["email"] = Json::Value(res.email());
 			}
@@ -68,21 +68,21 @@ LogicSystem::LogicSystem()
 			string confirm = request["confirm"].asString();
 
 			//验证码过期
-			auto VarifyCode = RedisManager::Instance().GetRedis().get(request["email"].asString());
-			if (!VarifyCode)
+			auto VerifyCode = RedisManager::Instance().GetRedis().get(request["email"].asString());
+			if (!VerifyCode)
 			{
 				//Debug
-				cout << "Get Varifycode Expired\n";
-				response["error"] = ErrorCodes::VarifyExpired;
+				cout << "Get Verifycode Expired\n";
+				response["error"] = ErrorCodes::VerifyExpired;
 				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
 			//验证码不匹配
-			if (*VarifyCode != request["varifycode"].asString())
+			if (*VerifyCode != request["verifycode"].asString())
 			{
 				//Debug
-				cout << "Varifycode Error\n";
-				response["error"] = ErrorCodes::VarifyCodeErr;
+				cout << "Verifycode Error\n";
+				response["error"] = ErrorCodes::VerifyCodeErr;
 				beast::ostream(connection->response().body()) << response.toStyledString();
 				return;
 			}
@@ -101,7 +101,7 @@ LogicSystem::LogicSystem()
 			response["user"] = name;
 			response["password"] = password;
 			response["confirm"] = confirm;
-			response["varifycode"] = request["varifycode"].asString();
+			response["verifycode"] = request["verifycode"].asString();
 			beast::ostream(connection->response().body()) << response.toStyledString();
 		});
 	// 登录

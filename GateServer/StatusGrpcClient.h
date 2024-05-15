@@ -8,15 +8,15 @@ using grpc::ClientContext;
 using grpc::Channel;
 using grpc::Status;
 using message::StatusService;
-using message::GetStatusServiceReq;
-using message::GetStatusServiceRes;
+using message::GetChatServerReq;
+using message::GetChatServerRes;
 
 class StatusGrpcClient : public Singleton<StatusGrpcClient>
 {
 	friend class Singleton<StatusGrpcClient>;
 public:
 	~StatusGrpcClient() = default;
-	GetStatusServiceRes GetChatServer(int uid);
+	GetChatServerRes GetChatServer(int uid);
 private:
 	StatusGrpcClient();
 	std::unique_ptr<StatusService::Stub> stub_;

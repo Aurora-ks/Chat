@@ -2,12 +2,12 @@ const nodemailer = require("nodemailer");
 const config = require("./config");
 
 const transporter = nodemailer.createTransport({
-	host: config.varifyHost,
-	port: config.varifyPort,
+	host: config.verifyHost,
+	port: config.verifyPort,
 	secure: true, // Use `true` for port 465, `false` for all other ports
 	auth: {
-		user: config.varifyEmail,
-		pass: config.varifyPassword,
+		user: config.verifyEmail,
+		pass: config.verifyPassword,
 	},
 });
 

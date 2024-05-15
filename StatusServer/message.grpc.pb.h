@@ -28,29 +28,29 @@
 
 namespace message {
 
-class Varify final {
+class Verify final {
  public:
   static constexpr char const* service_full_name() {
-    return "message.Varify";
+    return "message.Verify";
   }
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::message::VarifyRes* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VarifyRes>> AsyncGetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VarifyRes>>(AsyncGetVarifyCodeRaw(context, request, cq));
+    virtual ::grpc::Status GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::message::VerifyRes* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VerifyRes>> AsyncGetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VerifyRes>>(AsyncGetVerifyCodeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VarifyRes>> PrepareAsyncGetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VarifyRes>>(PrepareAsyncGetVarifyCodeRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VerifyRes>> PrepareAsyncGetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::VerifyRes>>(PrepareAsyncGetVerifyCodeRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -61,27 +61,27 @@ class Varify final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::VarifyRes>* AsyncGetVarifyCodeRaw(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::VarifyRes>* PrepareAsyncGetVarifyCodeRaw(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::VerifyRes>* AsyncGetVerifyCodeRaw(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::VerifyRes>* PrepareAsyncGetVerifyCodeRaw(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::message::VarifyRes* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VarifyRes>> AsyncGetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VarifyRes>>(AsyncGetVarifyCodeRaw(context, request, cq));
+    ::grpc::Status GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::message::VerifyRes* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VerifyRes>> AsyncGetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VerifyRes>>(AsyncGetVerifyCodeRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VarifyRes>> PrepareAsyncGetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VarifyRes>>(PrepareAsyncGetVarifyCodeRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VerifyRes>> PrepareAsyncGetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::VerifyRes>>(PrepareAsyncGetVerifyCodeRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, std::function<void(::grpc::Status)>) override;
+      void GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -94,9 +94,9 @@ class Varify final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::message::VarifyRes>* AsyncGetVarifyCodeRaw(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::message::VarifyRes>* PrepareAsyncGetVarifyCodeRaw(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_GetVarifyCode_;
+    ::grpc::ClientAsyncResponseReader< ::message::VerifyRes>* AsyncGetVerifyCodeRaw(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::message::VerifyRes>* PrepareAsyncGetVerifyCodeRaw(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_GetVerifyCode_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -104,124 +104,124 @@ class Varify final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status GetVarifyCode(::grpc::ServerContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response);
+    virtual ::grpc::Status GetVerifyCode(::grpc::ServerContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_GetVarifyCode : public BaseClass {
+  class WithAsyncMethod_GetVerifyCode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_GetVarifyCode() {
+    WithAsyncMethod_GetVerifyCode() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_GetVarifyCode() override {
+    ~WithAsyncMethod_GetVerifyCode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetVarifyCode(::grpc::ServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/) override {
+    ::grpc::Status GetVerifyCode(::grpc::ServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetVarifyCode(::grpc::ServerContext* context, ::message::VarifyReq* request, ::grpc::ServerAsyncResponseWriter< ::message::VarifyRes>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetVerifyCode(::grpc::ServerContext* context, ::message::VerifyReq* request, ::grpc::ServerAsyncResponseWriter< ::message::VerifyRes>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetVarifyCode<Service > AsyncService;
+  typedef WithAsyncMethod_GetVerifyCode<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_GetVarifyCode : public BaseClass {
+  class ExperimentalWithCallbackMethod_GetVerifyCode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithCallbackMethod_GetVarifyCode() {
+    ExperimentalWithCallbackMethod_GetVerifyCode() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::message::VarifyReq, ::message::VarifyRes>(
+          new ::grpc::internal::CallbackUnaryHandler< ::message::VerifyReq, ::message::VerifyRes>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::message::VarifyReq* request, ::message::VarifyRes* response) { return this->GetVarifyCode(context, request, response); }));}
-    void SetMessageAllocatorFor_GetVarifyCode(
-        ::grpc::experimental::MessageAllocator< ::message::VarifyReq, ::message::VarifyRes>* allocator) {
+                     context, const ::message::VerifyReq* request, ::message::VerifyRes* response) { return this->GetVerifyCode(context, request, response); }));}
+    void SetMessageAllocatorFor_GetVerifyCode(
+        ::grpc::experimental::MessageAllocator< ::message::VerifyReq, ::message::VerifyRes>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::message::VarifyReq, ::message::VarifyRes>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::message::VerifyReq, ::message::VerifyRes>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_GetVarifyCode() override {
+    ~ExperimentalWithCallbackMethod_GetVerifyCode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetVarifyCode(::grpc::ServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/) override {
+    ::grpc::Status GetVerifyCode(::grpc::ServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetVarifyCode(
-      ::grpc::CallbackServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/)
+    virtual ::grpc::ServerUnaryReactor* GetVerifyCode(
+      ::grpc::CallbackServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetVarifyCode(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/)
+    virtual ::grpc::experimental::ServerUnaryReactor* GetVerifyCode(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/)
     #endif
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_GetVarifyCode<Service > CallbackService;
+  typedef ExperimentalWithCallbackMethod_GetVerifyCode<Service > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_GetVarifyCode<Service > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_GetVerifyCode<Service > ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_GetVarifyCode : public BaseClass {
+  class WithGenericMethod_GetVerifyCode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_GetVarifyCode() {
+    WithGenericMethod_GetVerifyCode() {
       ::grpc::Service::MarkMethodGeneric(0);
     }
-    ~WithGenericMethod_GetVarifyCode() override {
+    ~WithGenericMethod_GetVerifyCode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetVarifyCode(::grpc::ServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/) override {
+    ::grpc::Status GetVerifyCode(::grpc::ServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithRawMethod_GetVarifyCode : public BaseClass {
+  class WithRawMethod_GetVerifyCode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_GetVarifyCode() {
+    WithRawMethod_GetVerifyCode() {
       ::grpc::Service::MarkMethodRaw(0);
     }
-    ~WithRawMethod_GetVarifyCode() override {
+    ~WithRawMethod_GetVerifyCode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetVarifyCode(::grpc::ServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/) override {
+    ::grpc::Status GetVerifyCode(::grpc::ServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetVarifyCode(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetVerifyCode(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_GetVarifyCode : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_GetVerifyCode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    ExperimentalWithRawCallbackMethod_GetVarifyCode() {
+    ExperimentalWithRawCallbackMethod_GetVerifyCode() {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::Service::
     #else
@@ -235,55 +235,55 @@ class Varify final {
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetVarifyCode(context, request, response); }));
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetVerifyCode(context, request, response); }));
     }
-    ~ExperimentalWithRawCallbackMethod_GetVarifyCode() override {
+    ~ExperimentalWithRawCallbackMethod_GetVerifyCode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetVarifyCode(::grpc::ServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/) override {
+    ::grpc::Status GetVerifyCode(::grpc::ServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-    virtual ::grpc::ServerUnaryReactor* GetVarifyCode(
+    virtual ::grpc::ServerUnaryReactor* GetVerifyCode(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #else
-    virtual ::grpc::experimental::ServerUnaryReactor* GetVarifyCode(
+    virtual ::grpc::experimental::ServerUnaryReactor* GetVerifyCode(
       ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
     #endif
       { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_GetVarifyCode : public BaseClass {
+  class WithStreamedUnaryMethod_GetVerifyCode : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_GetVarifyCode() {
+    WithStreamedUnaryMethod_GetVerifyCode() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::message::VarifyReq, ::message::VarifyRes>(
+          ::message::VerifyReq, ::message::VerifyRes>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::message::VarifyReq, ::message::VarifyRes>* streamer) {
-                       return this->StreamedGetVarifyCode(context,
+                     ::message::VerifyReq, ::message::VerifyRes>* streamer) {
+                       return this->StreamedGetVerifyCode(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_GetVarifyCode() override {
+    ~WithStreamedUnaryMethod_GetVerifyCode() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetVarifyCode(::grpc::ServerContext* /*context*/, const ::message::VarifyReq* /*request*/, ::message::VarifyRes* /*response*/) override {
+    ::grpc::Status GetVerifyCode(::grpc::ServerContext* /*context*/, const ::message::VerifyReq* /*request*/, ::message::VerifyRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetVarifyCode(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::message::VarifyReq,::message::VarifyRes>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetVerifyCode(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::message::VerifyReq,::message::VerifyRes>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetVarifyCode<Service > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetVerifyCode<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetVarifyCode<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_GetVerifyCode<Service > StreamedService;
 };
 
 class StatusService final {
@@ -294,21 +294,21 @@ class StatusService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::message::GetStatusServiceRes* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetStatusServiceRes>> AsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetStatusServiceRes>>(AsyncGetChatServerRaw(context, request, cq));
+    virtual ::grpc::Status GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::message::GetChatServerRes* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetChatServerRes>> AsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetChatServerRes>>(AsyncGetChatServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetStatusServiceRes>> PrepareAsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetStatusServiceRes>>(PrepareAsyncGetChatServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetChatServerRes>> PrepareAsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::message::GetChatServerRes>>(PrepareAsyncGetChatServerRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, std::function<void(::grpc::Status)>) = 0;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      virtual void GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       #else
-      virtual void GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
     };
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -319,27 +319,27 @@ class StatusService final {
     #endif
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::GetStatusServiceRes>* AsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::GetStatusServiceRes>* PrepareAsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::GetChatServerRes>* AsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::message::GetChatServerRes>* PrepareAsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::message::GetStatusServiceRes* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>> AsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>>(AsyncGetChatServerRaw(context, request, cq));
+    ::grpc::Status GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::message::GetChatServerRes* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>> AsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>>(AsyncGetChatServerRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>> PrepareAsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>>(PrepareAsyncGetChatServerRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>> PrepareAsyncGetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>>(PrepareAsyncGetChatServerRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, std::function<void(::grpc::Status)>) override;
+      void GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      void GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, ::grpc::ClientUnaryReactor* reactor) override;
       #else
-      void GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
      private:
       friend class Stub;
@@ -352,8 +352,8 @@ class StatusService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>* AsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>* PrepareAsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>* AsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>* PrepareAsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetChatServer_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -362,7 +362,7 @@ class StatusService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status GetChatServer(::grpc::ServerContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response);
+    virtual ::grpc::Status GetChatServer(::grpc::ServerContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetChatServer : public BaseClass {
@@ -376,11 +376,11 @@ class StatusService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/) override {
+    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetChatServer(::grpc::ServerContext* context, ::message::GetStatusServiceReq* request, ::grpc::ServerAsyncResponseWriter< ::message::GetStatusServiceRes>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetChatServer(::grpc::ServerContext* context, ::message::GetChatServerReq* request, ::grpc::ServerAsyncResponseWriter< ::message::GetChatServerRes>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -397,38 +397,38 @@ class StatusService final {
       ::grpc::Service::experimental().
     #endif
         MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::message::GetStatusServiceReq, ::message::GetStatusServiceRes>(
+          new ::grpc::internal::CallbackUnaryHandler< ::message::GetChatServerReq, ::message::GetChatServerRes>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
                    ::grpc::CallbackServerContext*
     #else
                    ::grpc::experimental::CallbackServerContext*
     #endif
-                     context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response) { return this->GetChatServer(context, request, response); }));}
+                     context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response) { return this->GetChatServer(context, request, response); }));}
     void SetMessageAllocatorFor_GetChatServer(
-        ::grpc::experimental::MessageAllocator< ::message::GetStatusServiceReq, ::message::GetStatusServiceRes>* allocator) {
+        ::grpc::experimental::MessageAllocator< ::message::GetChatServerReq, ::message::GetChatServerRes>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
     #else
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(0);
     #endif
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::message::GetStatusServiceReq, ::message::GetStatusServiceRes>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::message::GetChatServerReq, ::message::GetChatServerRes>*>(handler)
               ->SetMessageAllocator(allocator);
     }
     ~ExperimentalWithCallbackMethod_GetChatServer() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/) override {
+    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
     virtual ::grpc::ServerUnaryReactor* GetChatServer(
-      ::grpc::CallbackServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/)
+      ::grpc::CallbackServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/)
     #else
     virtual ::grpc::experimental::ServerUnaryReactor* GetChatServer(
-      ::grpc::experimental::CallbackServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/)
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/)
     #endif
       { return nullptr; }
   };
@@ -449,7 +449,7 @@ class StatusService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/) override {
+    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -466,7 +466,7 @@ class StatusService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/) override {
+    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -499,7 +499,7 @@ class StatusService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/) override {
+    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -520,10 +520,10 @@ class StatusService final {
     WithStreamedUnaryMethod_GetChatServer() {
       ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::message::GetStatusServiceReq, ::message::GetStatusServiceRes>(
+          ::message::GetChatServerReq, ::message::GetChatServerRes>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::message::GetStatusServiceReq, ::message::GetStatusServiceRes>* streamer) {
+                     ::message::GetChatServerReq, ::message::GetChatServerRes>* streamer) {
                        return this->StreamedGetChatServer(context,
                          streamer);
                   }));
@@ -532,12 +532,12 @@ class StatusService final {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetStatusServiceReq* /*request*/, ::message::GetStatusServiceRes* /*response*/) override {
+    ::grpc::Status GetChatServer(::grpc::ServerContext* /*context*/, const ::message::GetChatServerReq* /*request*/, ::message::GetChatServerRes* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetChatServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::message::GetStatusServiceReq,::message::GetStatusServiceRes>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetChatServer(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::message::GetChatServerReq,::message::GetChatServerRes>* server_unary_streamer) = 0;
   };
   typedef WithStreamedUnaryMethod_GetChatServer<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;

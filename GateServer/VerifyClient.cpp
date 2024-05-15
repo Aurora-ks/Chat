@@ -1,33 +1,33 @@
-#include "VarifyClient.h"
+#include "VerifyClient.h"
 #include "ErrorCodes.h"
 
-std::shared_ptr<VarifyClient> VarifyClient::instance_ = nullptr;
+std::shared_ptr<VerifyClient> VerifyClient::instance_ = nullptr;
 
 //TODO
 //增加多线程支持
 
-VarifyClient::VarifyClient()
+VerifyClient::VerifyClient()
 {
     std::shared_ptr<Channel> channel = grpc::CreateChannel("127.0.0.1:10086", grpc::InsecureChannelCredentials());
-    stub_ = Varify::NewStub(channel);
+    stub_ = Verify::NewStub(channel);
 }
 
-std::shared_ptr<VarifyClient> VarifyClient::GetInstance()
+std::shared_ptr<VerifyClient> VerifyClient::GetInstance()
 {
     static std::once_flag flag;
     std::call_once(flag, [&]() {
-        instance_ = std::shared_ptr<VarifyClient>(new VarifyClient);
+        instance_ = std::shared_ptr<VerifyClient>(new VerifyClient);
         });
     return instance_;
 }
 
-VarifyRes VarifyClient::GetVarifyCode(std::string email)
+VerifyRes VerifyClient::GetVerifyCode(std::string email)
 {
     ClientContext context;
-    VarifyReq request;
-    VarifyRes response;
+    VerifyReq request;
+    VerifyRes response;
     request.set_email(email);
-    Status status = stub_->GetVarifyCode(&context, request, &response);
+    Status status = stub_->GetVerifyCode(&context, request, &response);
     if (status.ok()) {
         response.set_error(ErrorCodes::SUCCESS);
     }

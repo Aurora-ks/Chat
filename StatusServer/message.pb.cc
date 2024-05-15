@@ -15,78 +15,78 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 namespace message {
-class VarifyReqDefaultTypeInternal {
+class VerifyReqDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VarifyReq> _instance;
-} _VarifyReq_default_instance_;
-class VarifyResDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VerifyReq> _instance;
+} _VerifyReq_default_instance_;
+class VerifyResDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VarifyRes> _instance;
-} _VarifyRes_default_instance_;
-class GetStatusServiceReqDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<VerifyRes> _instance;
+} _VerifyRes_default_instance_;
+class GetChatServerReqDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetStatusServiceReq> _instance;
-} _GetStatusServiceReq_default_instance_;
-class GetStatusServiceResDefaultTypeInternal {
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetChatServerReq> _instance;
+} _GetChatServerReq_default_instance_;
+class GetChatServerResDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetStatusServiceRes> _instance;
-} _GetStatusServiceRes_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetChatServerRes> _instance;
+} _GetChatServerRes_default_instance_;
 }  // namespace message
-static void InitDefaultsscc_info_GetStatusServiceReq_message_2eproto() {
+static void InitDefaultsscc_info_GetChatServerReq_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::message::_GetStatusServiceReq_default_instance_;
-    new (ptr) ::message::GetStatusServiceReq();
+    void* ptr = &::message::_GetChatServerReq_default_instance_;
+    new (ptr) ::message::GetChatServerReq();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::message::GetStatusServiceReq::InitAsDefaultInstance();
+  ::message::GetChatServerReq::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetStatusServiceReq_message_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetStatusServiceReq_message_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetChatServerReq_message_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetChatServerReq_message_2eproto}, {}};
 
-static void InitDefaultsscc_info_GetStatusServiceRes_message_2eproto() {
+static void InitDefaultsscc_info_GetChatServerRes_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::message::_GetStatusServiceRes_default_instance_;
-    new (ptr) ::message::GetStatusServiceRes();
+    void* ptr = &::message::_GetChatServerRes_default_instance_;
+    new (ptr) ::message::GetChatServerRes();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::message::GetStatusServiceRes::InitAsDefaultInstance();
+  ::message::GetChatServerRes::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetStatusServiceRes_message_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetStatusServiceRes_message_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetChatServerRes_message_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetChatServerRes_message_2eproto}, {}};
 
-static void InitDefaultsscc_info_VarifyReq_message_2eproto() {
+static void InitDefaultsscc_info_VerifyReq_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::message::_VarifyReq_default_instance_;
-    new (ptr) ::message::VarifyReq();
+    void* ptr = &::message::_VerifyReq_default_instance_;
+    new (ptr) ::message::VerifyReq();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::message::VarifyReq::InitAsDefaultInstance();
+  ::message::VerifyReq::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VarifyReq_message_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VarifyReq_message_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VerifyReq_message_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VerifyReq_message_2eproto}, {}};
 
-static void InitDefaultsscc_info_VarifyRes_message_2eproto() {
+static void InitDefaultsscc_info_VerifyRes_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::message::_VarifyRes_default_instance_;
-    new (ptr) ::message::VarifyRes();
+    void* ptr = &::message::_VerifyRes_default_instance_;
+    new (ptr) ::message::VerifyRes();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::message::VarifyRes::InitAsDefaultInstance();
+  ::message::VerifyRes::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VarifyRes_message_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VarifyRes_message_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VerifyRes_message_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VerifyRes_message_2eproto}, {}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_message_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_message_2eproto = nullptr;
@@ -94,72 +94,72 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_message_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::message::VarifyReq, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::message::VerifyReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::message::VarifyReq, email_),
+  PROTOBUF_FIELD_OFFSET(::message::VerifyReq, email_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::message::VarifyRes, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::message::VerifyRes, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::message::VarifyRes, error_),
-  PROTOBUF_FIELD_OFFSET(::message::VarifyRes, email_),
-  PROTOBUF_FIELD_OFFSET(::message::VarifyRes, code_),
+  PROTOBUF_FIELD_OFFSET(::message::VerifyRes, error_),
+  PROTOBUF_FIELD_OFFSET(::message::VerifyRes, email_),
+  PROTOBUF_FIELD_OFFSET(::message::VerifyRes, code_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceReq, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceReq, uid_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerReq, uid_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceRes, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerRes, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceRes, error_),
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceRes, host_),
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceRes, port_),
-  PROTOBUF_FIELD_OFFSET(::message::GetStatusServiceRes, token_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerRes, error_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerRes, host_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerRes, port_),
+  PROTOBUF_FIELD_OFFSET(::message::GetChatServerRes, token_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::message::VarifyReq)},
-  { 6, -1, sizeof(::message::VarifyRes)},
-  { 14, -1, sizeof(::message::GetStatusServiceReq)},
-  { 20, -1, sizeof(::message::GetStatusServiceRes)},
+  { 0, -1, sizeof(::message::VerifyReq)},
+  { 6, -1, sizeof(::message::VerifyRes)},
+  { 14, -1, sizeof(::message::GetChatServerReq)},
+  { 20, -1, sizeof(::message::GetChatServerRes)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_VarifyReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_VarifyRes_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_GetStatusServiceReq_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_GetStatusServiceRes_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_VerifyReq_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_VerifyRes_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_GetChatServerReq_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::message::_GetChatServerRes_default_instance_),
 };
 
 const char descriptor_table_protodef_message_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rmessage.proto\022\007message\"\032\n\tVarifyReq\022\r\n"
-  "\005email\030\001 \001(\t\"7\n\tVarifyRes\022\r\n\005error\030\001 \001(\005"
-  "\022\r\n\005email\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"\"\n\023GetStat"
-  "usServiceReq\022\013\n\003uid\030\001 \001(\005\"O\n\023GetStatusSe"
-  "rviceRes\022\r\n\005error\030\001 \001(\005\022\014\n\004host\030\002 \001(\t\022\014\n"
-  "\004port\030\003 \001(\t\022\r\n\005token\030\004 \001(\t2C\n\006Varify\0229\n\r"
-  "GetVarifyCode\022\022.message.VarifyReq\032\022.mess"
-  "age.VarifyRes\"\0002^\n\rStatusService\022M\n\rGetC"
-  "hatServer\022\034.message.GetStatusServiceReq\032"
-  "\034.message.GetStatusServiceRes\"\000b\006proto3"
+  "\n\rmessage.proto\022\007message\"\032\n\tVerifyReq\022\r\n"
+  "\005email\030\001 \001(\t\"7\n\tVerifyRes\022\r\n\005error\030\001 \001(\005"
+  "\022\r\n\005email\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\"\037\n\020GetChat"
+  "ServerReq\022\013\n\003uid\030\001 \001(\005\"L\n\020GetChatServerR"
+  "es\022\r\n\005error\030\001 \001(\005\022\014\n\004host\030\002 \001(\t\022\014\n\004port\030"
+  "\003 \001(\t\022\r\n\005token\030\004 \001(\t2C\n\006Verify\0229\n\rGetVer"
+  "ifyCode\022\022.message.VerifyReq\032\022.message.Ve"
+  "rifyRes\"\0002X\n\rStatusService\022G\n\rGetChatSer"
+  "ver\022\031.message.GetChatServerReq\032\031.message"
+  ".GetChatServerRes\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_message_2eproto_deps[1] = {
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_message_2eproto_sccs[4] = {
-  &scc_info_GetStatusServiceReq_message_2eproto.base,
-  &scc_info_GetStatusServiceRes_message_2eproto.base,
-  &scc_info_VarifyReq_message_2eproto.base,
-  &scc_info_VarifyRes_message_2eproto.base,
+  &scc_info_GetChatServerReq_message_2eproto.base,
+  &scc_info_GetChatServerRes_message_2eproto.base,
+  &scc_info_VerifyReq_message_2eproto.base,
+  &scc_info_VerifyRes_message_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_message_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_message_2eproto = {
-  false, false, descriptor_table_protodef_message_2eproto, "message.proto", 399,
+  false, false, descriptor_table_protodef_message_2eproto, "message.proto", 387,
   &descriptor_table_message_2eproto_once, descriptor_table_message_2eproto_sccs, descriptor_table_message_2eproto_deps, 4, 0,
   schemas, file_default_instances, TableStruct_message_2eproto::offsets,
   file_level_metadata_message_2eproto, 4, file_level_enum_descriptors_message_2eproto, file_level_service_descriptors_message_2eproto,
@@ -171,19 +171,19 @@ namespace message {
 
 // ===================================================================
 
-void VarifyReq::InitAsDefaultInstance() {
+void VerifyReq::InitAsDefaultInstance() {
 }
-class VarifyReq::_Internal {
+class VerifyReq::_Internal {
  public:
 };
 
-VarifyReq::VarifyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+VerifyReq::VerifyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:message.VarifyReq)
+  // @@protoc_insertion_point(arena_constructor:message.VerifyReq)
 }
-VarifyReq::VarifyReq(const VarifyReq& from)
+VerifyReq::VerifyReq(const VerifyReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -191,42 +191,42 @@ VarifyReq::VarifyReq(const VarifyReq& from)
     email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_email(),
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:message.VarifyReq)
+  // @@protoc_insertion_point(copy_constructor:message.VerifyReq)
 }
 
-void VarifyReq::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VarifyReq_message_2eproto.base);
+void VerifyReq::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VerifyReq_message_2eproto.base);
   email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-VarifyReq::~VarifyReq() {
-  // @@protoc_insertion_point(destructor:message.VarifyReq)
+VerifyReq::~VerifyReq() {
+  // @@protoc_insertion_point(destructor:message.VerifyReq)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void VarifyReq::SharedDtor() {
+void VerifyReq::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void VarifyReq::ArenaDtor(void* object) {
-  VarifyReq* _this = reinterpret_cast< VarifyReq* >(object);
+void VerifyReq::ArenaDtor(void* object) {
+  VerifyReq* _this = reinterpret_cast< VerifyReq* >(object);
   (void)_this;
 }
-void VarifyReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void VerifyReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void VarifyReq::SetCachedSize(int size) const {
+void VerifyReq::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const VarifyReq& VarifyReq::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VarifyReq_message_2eproto.base);
+const VerifyReq& VerifyReq::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VerifyReq_message_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void VarifyReq::Clear() {
-// @@protoc_insertion_point(message_clear_start:message.VarifyReq)
+void VerifyReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:message.VerifyReq)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -235,7 +235,7 @@ void VarifyReq::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* VarifyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* VerifyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -248,7 +248,7 @@ const char* VarifyReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_email();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.VarifyReq.email"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.VerifyReq.email"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -274,9 +274,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* VarifyReq::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* VerifyReq::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:message.VarifyReq)
+  // @@protoc_insertion_point(serialize_to_array_start:message.VerifyReq)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -285,7 +285,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "message.VarifyReq.email");
+      "message.VerifyReq.email");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_email(), target);
   }
@@ -294,12 +294,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:message.VarifyReq)
+  // @@protoc_insertion_point(serialize_to_array_end:message.VerifyReq)
   return target;
 }
 
-size_t VarifyReq::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:message.VarifyReq)
+size_t VerifyReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:message.VerifyReq)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -322,23 +322,23 @@ size_t VarifyReq::ByteSizeLong() const {
   return total_size;
 }
 
-void VarifyReq::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:message.VarifyReq)
+void VerifyReq::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:message.VerifyReq)
   GOOGLE_DCHECK_NE(&from, this);
-  const VarifyReq* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VarifyReq>(
+  const VerifyReq* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VerifyReq>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.VarifyReq)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.VerifyReq)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.VarifyReq)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.VerifyReq)
     MergeFrom(*source);
   }
 }
 
-void VarifyReq::MergeFrom(const VarifyReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:message.VarifyReq)
+void VerifyReq::MergeFrom(const VerifyReq& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:message.VerifyReq)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -349,50 +349,50 @@ void VarifyReq::MergeFrom(const VarifyReq& from) {
   }
 }
 
-void VarifyReq::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:message.VarifyReq)
+void VerifyReq::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:message.VerifyReq)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void VarifyReq::CopyFrom(const VarifyReq& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:message.VarifyReq)
+void VerifyReq::CopyFrom(const VerifyReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:message.VerifyReq)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool VarifyReq::IsInitialized() const {
+bool VerifyReq::IsInitialized() const {
   return true;
 }
 
-void VarifyReq::InternalSwap(VarifyReq* other) {
+void VerifyReq::InternalSwap(VerifyReq* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   email_.Swap(&other->email_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata VarifyReq::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata VerifyReq::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void VarifyRes::InitAsDefaultInstance() {
+void VerifyRes::InitAsDefaultInstance() {
 }
-class VarifyRes::_Internal {
+class VerifyRes::_Internal {
  public:
 };
 
-VarifyRes::VarifyRes(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+VerifyRes::VerifyRes(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:message.VarifyRes)
+  // @@protoc_insertion_point(arena_constructor:message.VerifyRes)
 }
-VarifyRes::VarifyRes(const VarifyRes& from)
+VerifyRes::VerifyRes(const VerifyRes& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -406,45 +406,45 @@ VarifyRes::VarifyRes(const VarifyRes& from)
       GetArena());
   }
   error_ = from.error_;
-  // @@protoc_insertion_point(copy_constructor:message.VarifyRes)
+  // @@protoc_insertion_point(copy_constructor:message.VerifyRes)
 }
 
-void VarifyRes::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VarifyRes_message_2eproto.base);
+void VerifyRes::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_VerifyRes_message_2eproto.base);
   email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   code_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   error_ = 0;
 }
 
-VarifyRes::~VarifyRes() {
-  // @@protoc_insertion_point(destructor:message.VarifyRes)
+VerifyRes::~VerifyRes() {
+  // @@protoc_insertion_point(destructor:message.VerifyRes)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void VarifyRes::SharedDtor() {
+void VerifyRes::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   code_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void VarifyRes::ArenaDtor(void* object) {
-  VarifyRes* _this = reinterpret_cast< VarifyRes* >(object);
+void VerifyRes::ArenaDtor(void* object) {
+  VerifyRes* _this = reinterpret_cast< VerifyRes* >(object);
   (void)_this;
 }
-void VarifyRes::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void VerifyRes::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void VarifyRes::SetCachedSize(int size) const {
+void VerifyRes::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const VarifyRes& VarifyRes::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VarifyRes_message_2eproto.base);
+const VerifyRes& VerifyRes::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_VerifyRes_message_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void VarifyRes::Clear() {
-// @@protoc_insertion_point(message_clear_start:message.VarifyRes)
+void VerifyRes::Clear() {
+// @@protoc_insertion_point(message_clear_start:message.VerifyRes)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -455,7 +455,7 @@ void VarifyRes::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* VarifyRes::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* VerifyRes::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -475,7 +475,7 @@ const char* VarifyRes::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_email();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.VarifyRes.email"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.VerifyRes.email"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -484,7 +484,7 @@ const char* VarifyRes::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.VarifyRes.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.VerifyRes.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -510,9 +510,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* VarifyRes::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* VerifyRes::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:message.VarifyRes)
+  // @@protoc_insertion_point(serialize_to_array_start:message.VerifyRes)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -527,7 +527,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "message.VarifyRes.email");
+      "message.VerifyRes.email");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_email(), target);
   }
@@ -537,7 +537,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "message.VarifyRes.code");
+      "message.VerifyRes.code");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_code(), target);
   }
@@ -546,12 +546,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:message.VarifyRes)
+  // @@protoc_insertion_point(serialize_to_array_end:message.VerifyRes)
   return target;
 }
 
-size_t VarifyRes::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:message.VarifyRes)
+size_t VerifyRes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:message.VerifyRes)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -588,23 +588,23 @@ size_t VarifyRes::ByteSizeLong() const {
   return total_size;
 }
 
-void VarifyRes::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:message.VarifyRes)
+void VerifyRes::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:message.VerifyRes)
   GOOGLE_DCHECK_NE(&from, this);
-  const VarifyRes* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VarifyRes>(
+  const VerifyRes* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<VerifyRes>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.VarifyRes)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.VerifyRes)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.VarifyRes)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.VerifyRes)
     MergeFrom(*source);
   }
 }
 
-void VarifyRes::MergeFrom(const VarifyRes& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:message.VarifyRes)
+void VerifyRes::MergeFrom(const VerifyRes& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:message.VerifyRes)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -621,25 +621,25 @@ void VarifyRes::MergeFrom(const VarifyRes& from) {
   }
 }
 
-void VarifyRes::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:message.VarifyRes)
+void VerifyRes::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:message.VerifyRes)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void VarifyRes::CopyFrom(const VarifyRes& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:message.VarifyRes)
+void VerifyRes::CopyFrom(const VerifyRes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:message.VerifyRes)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool VarifyRes::IsInitialized() const {
+bool VerifyRes::IsInitialized() const {
   return true;
 }
 
-void VarifyRes::InternalSwap(VarifyRes* other) {
+void VerifyRes::InternalSwap(VerifyRes* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   email_.Swap(&other->email_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -647,63 +647,63 @@ void VarifyRes::InternalSwap(VarifyRes* other) {
   swap(error_, other->error_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata VarifyRes::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata VerifyRes::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void GetStatusServiceReq::InitAsDefaultInstance() {
+void GetChatServerReq::InitAsDefaultInstance() {
 }
-class GetStatusServiceReq::_Internal {
+class GetChatServerReq::_Internal {
  public:
 };
 
-GetStatusServiceReq::GetStatusServiceReq(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+GetChatServerReq::GetChatServerReq(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(arena_constructor:message.GetChatServerReq)
 }
-GetStatusServiceReq::GetStatusServiceReq(const GetStatusServiceReq& from)
+GetChatServerReq::GetChatServerReq(const GetChatServerReq& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   uid_ = from.uid_;
-  // @@protoc_insertion_point(copy_constructor:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(copy_constructor:message.GetChatServerReq)
 }
 
-void GetStatusServiceReq::SharedCtor() {
+void GetChatServerReq::SharedCtor() {
   uid_ = 0;
 }
 
-GetStatusServiceReq::~GetStatusServiceReq() {
-  // @@protoc_insertion_point(destructor:message.GetStatusServiceReq)
+GetChatServerReq::~GetChatServerReq() {
+  // @@protoc_insertion_point(destructor:message.GetChatServerReq)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void GetStatusServiceReq::SharedDtor() {
+void GetChatServerReq::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void GetStatusServiceReq::ArenaDtor(void* object) {
-  GetStatusServiceReq* _this = reinterpret_cast< GetStatusServiceReq* >(object);
+void GetChatServerReq::ArenaDtor(void* object) {
+  GetChatServerReq* _this = reinterpret_cast< GetChatServerReq* >(object);
   (void)_this;
 }
-void GetStatusServiceReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void GetChatServerReq::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void GetStatusServiceReq::SetCachedSize(int size) const {
+void GetChatServerReq::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetStatusServiceReq& GetStatusServiceReq::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetStatusServiceReq_message_2eproto.base);
+const GetChatServerReq& GetChatServerReq::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetChatServerReq_message_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void GetStatusServiceReq::Clear() {
-// @@protoc_insertion_point(message_clear_start:message.GetStatusServiceReq)
+void GetChatServerReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:message.GetChatServerReq)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -712,7 +712,7 @@ void GetStatusServiceReq::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetStatusServiceReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetChatServerReq::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -749,9 +749,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetStatusServiceReq::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* GetChatServerReq::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(serialize_to_array_start:message.GetChatServerReq)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -765,12 +765,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(serialize_to_array_end:message.GetChatServerReq)
   return target;
 }
 
-size_t GetStatusServiceReq::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:message.GetStatusServiceReq)
+size_t GetChatServerReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:message.GetChatServerReq)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -793,23 +793,23 @@ size_t GetStatusServiceReq::ByteSizeLong() const {
   return total_size;
 }
 
-void GetStatusServiceReq::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:message.GetStatusServiceReq)
+void GetChatServerReq::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:message.GetChatServerReq)
   GOOGLE_DCHECK_NE(&from, this);
-  const GetStatusServiceReq* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetStatusServiceReq>(
+  const GetChatServerReq* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetChatServerReq>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.GetChatServerReq)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.GetChatServerReq)
     MergeFrom(*source);
   }
 }
 
-void GetStatusServiceReq::MergeFrom(const GetStatusServiceReq& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:message.GetStatusServiceReq)
+void GetChatServerReq::MergeFrom(const GetChatServerReq& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:message.GetChatServerReq)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -820,50 +820,50 @@ void GetStatusServiceReq::MergeFrom(const GetStatusServiceReq& from) {
   }
 }
 
-void GetStatusServiceReq::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:message.GetStatusServiceReq)
+void GetChatServerReq::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:message.GetChatServerReq)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GetStatusServiceReq::CopyFrom(const GetStatusServiceReq& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:message.GetStatusServiceReq)
+void GetChatServerReq::CopyFrom(const GetChatServerReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:message.GetChatServerReq)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetStatusServiceReq::IsInitialized() const {
+bool GetChatServerReq::IsInitialized() const {
   return true;
 }
 
-void GetStatusServiceReq::InternalSwap(GetStatusServiceReq* other) {
+void GetChatServerReq::InternalSwap(GetChatServerReq* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(uid_, other->uid_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetStatusServiceReq::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetChatServerReq::GetMetadata() const {
   return GetMetadataStatic();
 }
 
 
 // ===================================================================
 
-void GetStatusServiceRes::InitAsDefaultInstance() {
+void GetChatServerRes::InitAsDefaultInstance() {
 }
-class GetStatusServiceRes::_Internal {
+class GetChatServerRes::_Internal {
  public:
 };
 
-GetStatusServiceRes::GetStatusServiceRes(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+GetChatServerRes::GetChatServerRes(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(arena_constructor:message.GetChatServerRes)
 }
-GetStatusServiceRes::GetStatusServiceRes(const GetStatusServiceRes& from)
+GetChatServerRes::GetChatServerRes(const GetChatServerRes& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -882,47 +882,47 @@ GetStatusServiceRes::GetStatusServiceRes(const GetStatusServiceRes& from)
       GetArena());
   }
   error_ = from.error_;
-  // @@protoc_insertion_point(copy_constructor:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(copy_constructor:message.GetChatServerRes)
 }
 
-void GetStatusServiceRes::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetStatusServiceRes_message_2eproto.base);
+void GetChatServerRes::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetChatServerRes_message_2eproto.base);
   host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   error_ = 0;
 }
 
-GetStatusServiceRes::~GetStatusServiceRes() {
-  // @@protoc_insertion_point(destructor:message.GetStatusServiceRes)
+GetChatServerRes::~GetChatServerRes() {
+  // @@protoc_insertion_point(destructor:message.GetChatServerRes)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void GetStatusServiceRes::SharedDtor() {
+void GetChatServerRes::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   host_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void GetStatusServiceRes::ArenaDtor(void* object) {
-  GetStatusServiceRes* _this = reinterpret_cast< GetStatusServiceRes* >(object);
+void GetChatServerRes::ArenaDtor(void* object) {
+  GetChatServerRes* _this = reinterpret_cast< GetChatServerRes* >(object);
   (void)_this;
 }
-void GetStatusServiceRes::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void GetChatServerRes::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void GetStatusServiceRes::SetCachedSize(int size) const {
+void GetChatServerRes::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const GetStatusServiceRes& GetStatusServiceRes::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetStatusServiceRes_message_2eproto.base);
+const GetChatServerRes& GetChatServerRes::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetChatServerRes_message_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void GetStatusServiceRes::Clear() {
-// @@protoc_insertion_point(message_clear_start:message.GetStatusServiceRes)
+void GetChatServerRes::Clear() {
+// @@protoc_insertion_point(message_clear_start:message.GetChatServerRes)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -934,7 +934,7 @@ void GetStatusServiceRes::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetStatusServiceRes::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* GetChatServerRes::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
@@ -954,7 +954,7 @@ const char* GetStatusServiceRes::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_host();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.GetStatusServiceRes.host"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.GetChatServerRes.host"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -963,7 +963,7 @@ const char* GetStatusServiceRes::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_port();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.GetStatusServiceRes.port"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.GetChatServerRes.port"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -972,7 +972,7 @@ const char* GetStatusServiceRes::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_token();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.GetStatusServiceRes.token"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "message.GetChatServerRes.token"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -998,9 +998,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* GetStatusServiceRes::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* GetChatServerRes::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(serialize_to_array_start:message.GetChatServerRes)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1015,7 +1015,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_host().data(), static_cast<int>(this->_internal_host().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "message.GetStatusServiceRes.host");
+      "message.GetChatServerRes.host");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_host(), target);
   }
@@ -1025,7 +1025,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_port().data(), static_cast<int>(this->_internal_port().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "message.GetStatusServiceRes.port");
+      "message.GetChatServerRes.port");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_port(), target);
   }
@@ -1035,7 +1035,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_token().data(), static_cast<int>(this->_internal_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "message.GetStatusServiceRes.token");
+      "message.GetChatServerRes.token");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_token(), target);
   }
@@ -1044,12 +1044,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(serialize_to_array_end:message.GetChatServerRes)
   return target;
 }
 
-size_t GetStatusServiceRes::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:message.GetStatusServiceRes)
+size_t GetChatServerRes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:message.GetChatServerRes)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1093,23 +1093,23 @@ size_t GetStatusServiceRes::ByteSizeLong() const {
   return total_size;
 }
 
-void GetStatusServiceRes::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:message.GetStatusServiceRes)
+void GetChatServerRes::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:message.GetChatServerRes)
   GOOGLE_DCHECK_NE(&from, this);
-  const GetStatusServiceRes* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetStatusServiceRes>(
+  const GetChatServerRes* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetChatServerRes>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:message.GetChatServerRes)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:message.GetChatServerRes)
     MergeFrom(*source);
   }
 }
 
-void GetStatusServiceRes::MergeFrom(const GetStatusServiceRes& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:message.GetStatusServiceRes)
+void GetChatServerRes::MergeFrom(const GetChatServerRes& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:message.GetChatServerRes)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1129,25 +1129,25 @@ void GetStatusServiceRes::MergeFrom(const GetStatusServiceRes& from) {
   }
 }
 
-void GetStatusServiceRes::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:message.GetStatusServiceRes)
+void GetChatServerRes::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:message.GetChatServerRes)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void GetStatusServiceRes::CopyFrom(const GetStatusServiceRes& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:message.GetStatusServiceRes)
+void GetChatServerRes::CopyFrom(const GetChatServerRes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:message.GetChatServerRes)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetStatusServiceRes::IsInitialized() const {
+bool GetChatServerRes::IsInitialized() const {
   return true;
 }
 
-void GetStatusServiceRes::InternalSwap(GetStatusServiceRes* other) {
+void GetChatServerRes::InternalSwap(GetChatServerRes* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   host_.Swap(&other->host_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -1156,7 +1156,7 @@ void GetStatusServiceRes::InternalSwap(GetStatusServiceRes* other) {
   swap(error_, other->error_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetStatusServiceRes::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetChatServerRes::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -1164,17 +1164,17 @@ void GetStatusServiceRes::InternalSwap(GetStatusServiceRes* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace message
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::message::VarifyReq* Arena::CreateMaybeMessage< ::message::VarifyReq >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::message::VarifyReq >(arena);
+template<> PROTOBUF_NOINLINE ::message::VerifyReq* Arena::CreateMaybeMessage< ::message::VerifyReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::message::VerifyReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::message::VarifyRes* Arena::CreateMaybeMessage< ::message::VarifyRes >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::message::VarifyRes >(arena);
+template<> PROTOBUF_NOINLINE ::message::VerifyRes* Arena::CreateMaybeMessage< ::message::VerifyRes >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::message::VerifyRes >(arena);
 }
-template<> PROTOBUF_NOINLINE ::message::GetStatusServiceReq* Arena::CreateMaybeMessage< ::message::GetStatusServiceReq >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::message::GetStatusServiceReq >(arena);
+template<> PROTOBUF_NOINLINE ::message::GetChatServerReq* Arena::CreateMaybeMessage< ::message::GetChatServerReq >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::message::GetChatServerReq >(arena);
 }
-template<> PROTOBUF_NOINLINE ::message::GetStatusServiceRes* Arena::CreateMaybeMessage< ::message::GetStatusServiceRes >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::message::GetStatusServiceRes >(arena);
+template<> PROTOBUF_NOINLINE ::message::GetChatServerRes* Arena::CreateMaybeMessage< ::message::GetChatServerRes >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::message::GetChatServerRes >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

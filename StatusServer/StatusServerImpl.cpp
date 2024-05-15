@@ -20,7 +20,7 @@ StatusServerImpl::StatusServerImpl()
 	servers_.emplace_back(ChatServer{ "127.0.0.1", "9001" });
 }
 
-Status StatusServerImpl::GetChatServer(ServerContext* context, const GetStatusServiceReq *req, GetStatusServiceRes* res)
+Status StatusServerImpl::GetChatServer(ServerContext* context, const GetChatServerReq*req, GetChatServerRes* res)
 {
 	//Debug
 	cout << "receive uid: " << req->uid() << endl;

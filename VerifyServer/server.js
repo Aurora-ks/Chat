@@ -17,7 +17,7 @@ function generateRandomNumber() {
 	return randomNumber;
 }
 
-async function GetVarifyCode(call, callback) {
+async function GetVerifyCode(call, callback) {
 	console.log("email is ", call.request.email);
 	try {
 		let code = await redis.get(call.request.email);
@@ -33,7 +33,7 @@ async function GetVarifyCode(call, callback) {
 		let text_str = "您的验证码为" + code + "请三分钟内完成注册";
 		//发送邮件
 		let mailOptions = {
-			from: config.varifyEmail,
+			from: config.verifyEmail,
 			to: call.request.email,
 			subject: "验证码",
 			text: text_str,
@@ -51,8 +51,8 @@ async function GetVarifyCode(call, callback) {
 }
 
 let server = new grpc.Server();
-server.addService(message_proto.Varify.service, { GetVarifyCode: GetVarifyCode });
+server.addService(message_proto.Verify.service, { GetVerifyCode: GetVerifyCode });
 const host = config.serverHost+':'+config.serverPort;
 server.bindAsync(host, grpc.ServerCredentials.createInsecure(), () => {
-	console.log("varify server started on ", host);
+	console.log("verify server started on ", host);
 });

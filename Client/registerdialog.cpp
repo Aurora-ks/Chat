@@ -82,7 +82,7 @@ void RegisterDialog::on_GetCodeBtn_clicked()
         //发送验证码
         QJsonObject jsonObj;
         jsonObj["email"] = email;
-        HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/varify"),
+        HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/verify"),
                                                 jsonObj, RequestID::ID_GET_VARIFY_CODE);
     }
     else

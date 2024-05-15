@@ -21,60 +21,60 @@
 #include <grpcpp/impl/codegen/sync_stream.h>
 namespace message {
 
-static const char* Varify_method_names[] = {
-  "/message.Varify/GetVarifyCode",
+static const char* Verify_method_names[] = {
+  "/message.Verify/GetVerifyCode",
 };
 
-std::unique_ptr< Varify::Stub> Varify::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+std::unique_ptr< Verify::Stub> Verify::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
   (void)options;
-  std::unique_ptr< Varify::Stub> stub(new Varify::Stub(channel));
+  std::unique_ptr< Verify::Stub> stub(new Verify::Stub(channel));
   return stub;
 }
 
-Varify::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_GetVarifyCode_(Varify_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+Verify::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
+  : channel_(channel), rpcmethod_GetVerifyCode_(Verify_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status Varify::Stub::GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::message::VarifyRes* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::message::VarifyReq, ::message::VarifyRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetVarifyCode_, context, request, response);
+::grpc::Status Verify::Stub::GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::message::VerifyRes* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::message::VerifyReq, ::message::VerifyRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetVerifyCode_, context, request, response);
 }
 
-void Varify::Stub::experimental_async::GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::message::VarifyReq, ::message::VarifyRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVarifyCode_, context, request, response, std::move(f));
+void Verify::Stub::experimental_async::GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::message::VerifyReq, ::message::VerifyRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVerifyCode_, context, request, response, std::move(f));
 }
 
-void Varify::Stub::experimental_async::GetVarifyCode(::grpc::ClientContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVarifyCode_, context, request, response, reactor);
+void Verify::Stub::experimental_async::GetVerifyCode(::grpc::ClientContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetVerifyCode_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::message::VarifyRes>* Varify::Stub::PrepareAsyncGetVarifyCodeRaw(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::message::VarifyRes, ::message::VarifyReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetVarifyCode_, context, request);
+::grpc::ClientAsyncResponseReader< ::message::VerifyRes>* Verify::Stub::PrepareAsyncGetVerifyCodeRaw(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::message::VerifyRes, ::message::VerifyReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetVerifyCode_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::message::VarifyRes>* Varify::Stub::AsyncGetVarifyCodeRaw(::grpc::ClientContext* context, const ::message::VarifyReq& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::message::VerifyRes>* Verify::Stub::AsyncGetVerifyCodeRaw(::grpc::ClientContext* context, const ::message::VerifyReq& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetVarifyCodeRaw(context, request, cq);
+    this->PrepareAsyncGetVerifyCodeRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-Varify::Service::Service() {
+Verify::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Varify_method_names[0],
+      Verify_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Varify::Service, ::message::VarifyReq, ::message::VarifyRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](Varify::Service* service,
+      new ::grpc::internal::RpcMethodHandler< Verify::Service, ::message::VerifyReq, ::message::VerifyRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Verify::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::message::VarifyReq* req,
-             ::message::VarifyRes* resp) {
-               return service->GetVarifyCode(ctx, req, resp);
+             const ::message::VerifyReq* req,
+             ::message::VerifyRes* resp) {
+               return service->GetVerifyCode(ctx, req, resp);
              }, this)));
 }
 
-Varify::Service::~Service() {
+Verify::Service::~Service() {
 }
 
-::grpc::Status Varify::Service::GetVarifyCode(::grpc::ServerContext* context, const ::message::VarifyReq* request, ::message::VarifyRes* response) {
+::grpc::Status Verify::Service::GetVerifyCode(::grpc::ServerContext* context, const ::message::VerifyReq* request, ::message::VerifyRes* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -96,23 +96,23 @@ StatusService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   : channel_(channel), rpcmethod_GetChatServer_(StatusService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status StatusService::Stub::GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::message::GetStatusServiceRes* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::message::GetStatusServiceReq, ::message::GetStatusServiceRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetChatServer_, context, request, response);
+::grpc::Status StatusService::Stub::GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::message::GetChatServerRes* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::message::GetChatServerReq, ::message::GetChatServerRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetChatServer_, context, request, response);
 }
 
-void StatusService::Stub::experimental_async::GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::message::GetStatusServiceReq, ::message::GetStatusServiceRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetChatServer_, context, request, response, std::move(f));
+void StatusService::Stub::experimental_async::GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::message::GetChatServerReq, ::message::GetChatServerRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetChatServer_, context, request, response, std::move(f));
 }
 
-void StatusService::Stub::experimental_async::GetChatServer(::grpc::ClientContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void StatusService::Stub::experimental_async::GetChatServer(::grpc::ClientContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetChatServer_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>* StatusService::Stub::PrepareAsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::message::GetStatusServiceRes, ::message::GetStatusServiceReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetChatServer_, context, request);
+::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>* StatusService::Stub::PrepareAsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::message::GetChatServerRes, ::message::GetChatServerReq, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetChatServer_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::message::GetStatusServiceRes>* StatusService::Stub::AsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetStatusServiceReq& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::message::GetChatServerRes>* StatusService::Stub::AsyncGetChatServerRaw(::grpc::ClientContext* context, const ::message::GetChatServerReq& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetChatServerRaw(context, request, cq);
   result->StartCall();
@@ -123,11 +123,11 @@ StatusService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       StatusService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< StatusService::Service, ::message::GetStatusServiceReq, ::message::GetStatusServiceRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< StatusService::Service, ::message::GetChatServerReq, ::message::GetChatServerRes, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](StatusService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::message::GetStatusServiceReq* req,
-             ::message::GetStatusServiceRes* resp) {
+             const ::message::GetChatServerReq* req,
+             ::message::GetChatServerRes* resp) {
                return service->GetChatServer(ctx, req, resp);
              }, this)));
 }
@@ -135,7 +135,7 @@ StatusService::Service::Service() {
 StatusService::Service::~Service() {
 }
 
-::grpc::Status StatusService::Service::GetChatServer(::grpc::ServerContext* context, const ::message::GetStatusServiceReq* request, ::message::GetStatusServiceRes* response) {
+::grpc::Status StatusService::Service::GetChatServer(::grpc::ServerContext* context, const ::message::GetChatServerReq* request, ::message::GetChatServerRes* response) {
   (void) context;
   (void) request;
   (void) response;

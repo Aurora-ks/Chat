@@ -55,46 +55,46 @@ struct TableStruct_message_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_message_2eproto;
 namespace message {
-class GetStatusServiceReq;
-class GetStatusServiceReqDefaultTypeInternal;
-extern GetStatusServiceReqDefaultTypeInternal _GetStatusServiceReq_default_instance_;
-class GetStatusServiceRes;
-class GetStatusServiceResDefaultTypeInternal;
-extern GetStatusServiceResDefaultTypeInternal _GetStatusServiceRes_default_instance_;
-class VarifyReq;
-class VarifyReqDefaultTypeInternal;
-extern VarifyReqDefaultTypeInternal _VarifyReq_default_instance_;
-class VarifyRes;
-class VarifyResDefaultTypeInternal;
-extern VarifyResDefaultTypeInternal _VarifyRes_default_instance_;
+class GetChatServerReq;
+class GetChatServerReqDefaultTypeInternal;
+extern GetChatServerReqDefaultTypeInternal _GetChatServerReq_default_instance_;
+class GetChatServerRes;
+class GetChatServerResDefaultTypeInternal;
+extern GetChatServerResDefaultTypeInternal _GetChatServerRes_default_instance_;
+class VerifyReq;
+class VerifyReqDefaultTypeInternal;
+extern VerifyReqDefaultTypeInternal _VerifyReq_default_instance_;
+class VerifyRes;
+class VerifyResDefaultTypeInternal;
+extern VerifyResDefaultTypeInternal _VerifyRes_default_instance_;
 }  // namespace message
 PROTOBUF_NAMESPACE_OPEN
-template<> ::message::GetStatusServiceReq* Arena::CreateMaybeMessage<::message::GetStatusServiceReq>(Arena*);
-template<> ::message::GetStatusServiceRes* Arena::CreateMaybeMessage<::message::GetStatusServiceRes>(Arena*);
-template<> ::message::VarifyReq* Arena::CreateMaybeMessage<::message::VarifyReq>(Arena*);
-template<> ::message::VarifyRes* Arena::CreateMaybeMessage<::message::VarifyRes>(Arena*);
+template<> ::message::GetChatServerReq* Arena::CreateMaybeMessage<::message::GetChatServerReq>(Arena*);
+template<> ::message::GetChatServerRes* Arena::CreateMaybeMessage<::message::GetChatServerRes>(Arena*);
+template<> ::message::VerifyReq* Arena::CreateMaybeMessage<::message::VerifyReq>(Arena*);
+template<> ::message::VerifyRes* Arena::CreateMaybeMessage<::message::VerifyRes>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace message {
 
 // ===================================================================
 
-class VarifyReq PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.VarifyReq) */ {
+class VerifyReq PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.VerifyReq) */ {
  public:
-  inline VarifyReq() : VarifyReq(nullptr) {}
-  virtual ~VarifyReq();
+  inline VerifyReq() : VerifyReq(nullptr) {}
+  virtual ~VerifyReq();
 
-  VarifyReq(const VarifyReq& from);
-  VarifyReq(VarifyReq&& from) noexcept
-    : VarifyReq() {
+  VerifyReq(const VerifyReq& from);
+  VerifyReq(VerifyReq&& from) noexcept
+    : VerifyReq() {
     *this = ::std::move(from);
   }
 
-  inline VarifyReq& operator=(const VarifyReq& from) {
+  inline VerifyReq& operator=(const VerifyReq& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VarifyReq& operator=(VarifyReq&& from) noexcept {
+  inline VerifyReq& operator=(VerifyReq&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -112,20 +112,20 @@ class VarifyReq PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const VarifyReq& default_instance();
+  static const VerifyReq& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VarifyReq* internal_default_instance() {
-    return reinterpret_cast<const VarifyReq*>(
-               &_VarifyReq_default_instance_);
+  static inline const VerifyReq* internal_default_instance() {
+    return reinterpret_cast<const VerifyReq*>(
+               &_VerifyReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(VarifyReq& a, VarifyReq& b) {
+  friend void swap(VerifyReq& a, VerifyReq& b) {
     a.Swap(&b);
   }
-  inline void Swap(VarifyReq* other) {
+  inline void Swap(VerifyReq* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -133,7 +133,7 @@ class VarifyReq PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VarifyReq* other) {
+  void UnsafeArenaSwap(VerifyReq* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -141,17 +141,17 @@ class VarifyReq PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline VarifyReq* New() const final {
-    return CreateMaybeMessage<VarifyReq>(nullptr);
+  inline VerifyReq* New() const final {
+    return CreateMaybeMessage<VerifyReq>(nullptr);
   }
 
-  VarifyReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VarifyReq>(arena);
+  VerifyReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<VerifyReq>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VarifyReq& from);
-  void MergeFrom(const VarifyReq& from);
+  void CopyFrom(const VerifyReq& from);
+  void MergeFrom(const VerifyReq& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -165,13 +165,13 @@ class VarifyReq PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VarifyReq* other);
+  void InternalSwap(VerifyReq* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "message.VarifyReq";
+    return "message.VerifyReq";
   }
   protected:
-  explicit VarifyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit VerifyReq(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -209,7 +209,7 @@ class VarifyReq PROTOBUF_FINAL :
   std::string* _internal_mutable_email();
   public:
 
-  // @@protoc_insertion_point(class_scope:message.VarifyReq)
+  // @@protoc_insertion_point(class_scope:message.VerifyReq)
  private:
   class _Internal;
 
@@ -222,23 +222,23 @@ class VarifyReq PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class VarifyRes PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.VarifyRes) */ {
+class VerifyRes PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.VerifyRes) */ {
  public:
-  inline VarifyRes() : VarifyRes(nullptr) {}
-  virtual ~VarifyRes();
+  inline VerifyRes() : VerifyRes(nullptr) {}
+  virtual ~VerifyRes();
 
-  VarifyRes(const VarifyRes& from);
-  VarifyRes(VarifyRes&& from) noexcept
-    : VarifyRes() {
+  VerifyRes(const VerifyRes& from);
+  VerifyRes(VerifyRes&& from) noexcept
+    : VerifyRes() {
     *this = ::std::move(from);
   }
 
-  inline VarifyRes& operator=(const VarifyRes& from) {
+  inline VerifyRes& operator=(const VerifyRes& from) {
     CopyFrom(from);
     return *this;
   }
-  inline VarifyRes& operator=(VarifyRes&& from) noexcept {
+  inline VerifyRes& operator=(VerifyRes&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -256,20 +256,20 @@ class VarifyRes PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const VarifyRes& default_instance();
+  static const VerifyRes& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const VarifyRes* internal_default_instance() {
-    return reinterpret_cast<const VarifyRes*>(
-               &_VarifyRes_default_instance_);
+  static inline const VerifyRes* internal_default_instance() {
+    return reinterpret_cast<const VerifyRes*>(
+               &_VerifyRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(VarifyRes& a, VarifyRes& b) {
+  friend void swap(VerifyRes& a, VerifyRes& b) {
     a.Swap(&b);
   }
-  inline void Swap(VarifyRes* other) {
+  inline void Swap(VerifyRes* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -277,7 +277,7 @@ class VarifyRes PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(VarifyRes* other) {
+  void UnsafeArenaSwap(VerifyRes* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -285,17 +285,17 @@ class VarifyRes PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline VarifyRes* New() const final {
-    return CreateMaybeMessage<VarifyRes>(nullptr);
+  inline VerifyRes* New() const final {
+    return CreateMaybeMessage<VerifyRes>(nullptr);
   }
 
-  VarifyRes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<VarifyRes>(arena);
+  VerifyRes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<VerifyRes>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const VarifyRes& from);
-  void MergeFrom(const VarifyRes& from);
+  void CopyFrom(const VerifyRes& from);
+  void MergeFrom(const VerifyRes& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -309,13 +309,13 @@ class VarifyRes PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(VarifyRes* other);
+  void InternalSwap(VerifyRes* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "message.VarifyRes";
+    return "message.VerifyRes";
   }
   protected:
-  explicit VarifyRes(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit VerifyRes(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -380,7 +380,7 @@ class VarifyRes PROTOBUF_FINAL :
   void _internal_set_error(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:message.VarifyRes)
+  // @@protoc_insertion_point(class_scope:message.VerifyRes)
  private:
   class _Internal;
 
@@ -395,23 +395,23 @@ class VarifyRes PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class GetStatusServiceReq PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetStatusServiceReq) */ {
+class GetChatServerReq PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetChatServerReq) */ {
  public:
-  inline GetStatusServiceReq() : GetStatusServiceReq(nullptr) {}
-  virtual ~GetStatusServiceReq();
+  inline GetChatServerReq() : GetChatServerReq(nullptr) {}
+  virtual ~GetChatServerReq();
 
-  GetStatusServiceReq(const GetStatusServiceReq& from);
-  GetStatusServiceReq(GetStatusServiceReq&& from) noexcept
-    : GetStatusServiceReq() {
+  GetChatServerReq(const GetChatServerReq& from);
+  GetChatServerReq(GetChatServerReq&& from) noexcept
+    : GetChatServerReq() {
     *this = ::std::move(from);
   }
 
-  inline GetStatusServiceReq& operator=(const GetStatusServiceReq& from) {
+  inline GetChatServerReq& operator=(const GetChatServerReq& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetStatusServiceReq& operator=(GetStatusServiceReq&& from) noexcept {
+  inline GetChatServerReq& operator=(GetChatServerReq&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -429,20 +429,20 @@ class GetStatusServiceReq PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const GetStatusServiceReq& default_instance();
+  static const GetChatServerReq& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetStatusServiceReq* internal_default_instance() {
-    return reinterpret_cast<const GetStatusServiceReq*>(
-               &_GetStatusServiceReq_default_instance_);
+  static inline const GetChatServerReq* internal_default_instance() {
+    return reinterpret_cast<const GetChatServerReq*>(
+               &_GetChatServerReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     2;
 
-  friend void swap(GetStatusServiceReq& a, GetStatusServiceReq& b) {
+  friend void swap(GetChatServerReq& a, GetChatServerReq& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetStatusServiceReq* other) {
+  inline void Swap(GetChatServerReq* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -450,7 +450,7 @@ class GetStatusServiceReq PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetStatusServiceReq* other) {
+  void UnsafeArenaSwap(GetChatServerReq* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -458,17 +458,17 @@ class GetStatusServiceReq PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline GetStatusServiceReq* New() const final {
-    return CreateMaybeMessage<GetStatusServiceReq>(nullptr);
+  inline GetChatServerReq* New() const final {
+    return CreateMaybeMessage<GetChatServerReq>(nullptr);
   }
 
-  GetStatusServiceReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetStatusServiceReq>(arena);
+  GetChatServerReq* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetChatServerReq>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const GetStatusServiceReq& from);
-  void MergeFrom(const GetStatusServiceReq& from);
+  void CopyFrom(const GetChatServerReq& from);
+  void MergeFrom(const GetChatServerReq& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -482,13 +482,13 @@ class GetStatusServiceReq PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetStatusServiceReq* other);
+  void InternalSwap(GetChatServerReq* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "message.GetStatusServiceReq";
+    return "message.GetChatServerReq";
   }
   protected:
-  explicit GetStatusServiceReq(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit GetChatServerReq(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -519,7 +519,7 @@ class GetStatusServiceReq PROTOBUF_FINAL :
   void _internal_set_uid(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:message.GetStatusServiceReq)
+  // @@protoc_insertion_point(class_scope:message.GetChatServerReq)
  private:
   class _Internal;
 
@@ -532,23 +532,23 @@ class GetStatusServiceReq PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class GetStatusServiceRes PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetStatusServiceRes) */ {
+class GetChatServerRes PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:message.GetChatServerRes) */ {
  public:
-  inline GetStatusServiceRes() : GetStatusServiceRes(nullptr) {}
-  virtual ~GetStatusServiceRes();
+  inline GetChatServerRes() : GetChatServerRes(nullptr) {}
+  virtual ~GetChatServerRes();
 
-  GetStatusServiceRes(const GetStatusServiceRes& from);
-  GetStatusServiceRes(GetStatusServiceRes&& from) noexcept
-    : GetStatusServiceRes() {
+  GetChatServerRes(const GetChatServerRes& from);
+  GetChatServerRes(GetChatServerRes&& from) noexcept
+    : GetChatServerRes() {
     *this = ::std::move(from);
   }
 
-  inline GetStatusServiceRes& operator=(const GetStatusServiceRes& from) {
+  inline GetChatServerRes& operator=(const GetChatServerRes& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetStatusServiceRes& operator=(GetStatusServiceRes&& from) noexcept {
+  inline GetChatServerRes& operator=(GetChatServerRes&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -566,20 +566,20 @@ class GetStatusServiceRes PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const GetStatusServiceRes& default_instance();
+  static const GetChatServerRes& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetStatusServiceRes* internal_default_instance() {
-    return reinterpret_cast<const GetStatusServiceRes*>(
-               &_GetStatusServiceRes_default_instance_);
+  static inline const GetChatServerRes* internal_default_instance() {
+    return reinterpret_cast<const GetChatServerRes*>(
+               &_GetChatServerRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     3;
 
-  friend void swap(GetStatusServiceRes& a, GetStatusServiceRes& b) {
+  friend void swap(GetChatServerRes& a, GetChatServerRes& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetStatusServiceRes* other) {
+  inline void Swap(GetChatServerRes* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -587,7 +587,7 @@ class GetStatusServiceRes PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetStatusServiceRes* other) {
+  void UnsafeArenaSwap(GetChatServerRes* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -595,17 +595,17 @@ class GetStatusServiceRes PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline GetStatusServiceRes* New() const final {
-    return CreateMaybeMessage<GetStatusServiceRes>(nullptr);
+  inline GetChatServerRes* New() const final {
+    return CreateMaybeMessage<GetChatServerRes>(nullptr);
   }
 
-  GetStatusServiceRes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetStatusServiceRes>(arena);
+  GetChatServerRes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetChatServerRes>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const GetStatusServiceRes& from);
-  void MergeFrom(const GetStatusServiceRes& from);
+  void CopyFrom(const GetChatServerRes& from);
+  void MergeFrom(const GetChatServerRes& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -619,13 +619,13 @@ class GetStatusServiceRes PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetStatusServiceRes* other);
+  void InternalSwap(GetChatServerRes* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "message.GetStatusServiceRes";
+    return "message.GetChatServerRes";
   }
   protected:
-  explicit GetStatusServiceRes(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit GetChatServerRes(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -707,7 +707,7 @@ class GetStatusServiceRes PROTOBUF_FINAL :
   void _internal_set_error(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:message.GetStatusServiceRes)
+  // @@protoc_insertion_point(class_scope:message.GetChatServerRes)
  private:
   class _Internal;
 
@@ -730,60 +730,60 @@ class GetStatusServiceRes PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// VarifyReq
+// VerifyReq
 
 // string email = 1;
-inline void VarifyReq::clear_email() {
+inline void VerifyReq::clear_email() {
   email_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& VarifyReq::email() const {
-  // @@protoc_insertion_point(field_get:message.VarifyReq.email)
+inline const std::string& VerifyReq::email() const {
+  // @@protoc_insertion_point(field_get:message.VerifyReq.email)
   return _internal_email();
 }
-inline void VarifyReq::set_email(const std::string& value) {
+inline void VerifyReq::set_email(const std::string& value) {
   _internal_set_email(value);
-  // @@protoc_insertion_point(field_set:message.VarifyReq.email)
+  // @@protoc_insertion_point(field_set:message.VerifyReq.email)
 }
-inline std::string* VarifyReq::mutable_email() {
-  // @@protoc_insertion_point(field_mutable:message.VarifyReq.email)
+inline std::string* VerifyReq::mutable_email() {
+  // @@protoc_insertion_point(field_mutable:message.VerifyReq.email)
   return _internal_mutable_email();
 }
-inline const std::string& VarifyReq::_internal_email() const {
+inline const std::string& VerifyReq::_internal_email() const {
   return email_.Get();
 }
-inline void VarifyReq::_internal_set_email(const std::string& value) {
+inline void VerifyReq::_internal_set_email(const std::string& value) {
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void VarifyReq::set_email(std::string&& value) {
+inline void VerifyReq::set_email(std::string&& value) {
   
   email_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:message.VarifyReq.email)
+  // @@protoc_insertion_point(field_set_rvalue:message.VerifyReq.email)
 }
-inline void VarifyReq::set_email(const char* value) {
+inline void VerifyReq::set_email(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:message.VarifyReq.email)
+  // @@protoc_insertion_point(field_set_char:message.VerifyReq.email)
 }
-inline void VarifyReq::set_email(const char* value,
+inline void VerifyReq::set_email(const char* value,
     size_t size) {
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:message.VarifyReq.email)
+  // @@protoc_insertion_point(field_set_pointer:message.VerifyReq.email)
 }
-inline std::string* VarifyReq::_internal_mutable_email() {
+inline std::string* VerifyReq::_internal_mutable_email() {
   
   return email_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* VarifyReq::release_email() {
-  // @@protoc_insertion_point(field_release:message.VarifyReq.email)
+inline std::string* VerifyReq::release_email() {
+  // @@protoc_insertion_point(field_release:message.VerifyReq.email)
   return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void VarifyReq::set_allocated_email(std::string* email) {
+inline void VerifyReq::set_allocated_email(std::string* email) {
   if (email != nullptr) {
     
   } else {
@@ -791,85 +791,85 @@ inline void VarifyReq::set_allocated_email(std::string* email) {
   }
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:message.VarifyReq.email)
+  // @@protoc_insertion_point(field_set_allocated:message.VerifyReq.email)
 }
 
 // -------------------------------------------------------------------
 
-// VarifyRes
+// VerifyRes
 
 // int32 error = 1;
-inline void VarifyRes::clear_error() {
+inline void VerifyRes::clear_error() {
   error_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 VarifyRes::_internal_error() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 VerifyRes::_internal_error() const {
   return error_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 VarifyRes::error() const {
-  // @@protoc_insertion_point(field_get:message.VarifyRes.error)
+inline ::PROTOBUF_NAMESPACE_ID::int32 VerifyRes::error() const {
+  // @@protoc_insertion_point(field_get:message.VerifyRes.error)
   return _internal_error();
 }
-inline void VarifyRes::_internal_set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void VerifyRes::_internal_set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   error_ = value;
 }
-inline void VarifyRes::set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void VerifyRes::set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_error(value);
-  // @@protoc_insertion_point(field_set:message.VarifyRes.error)
+  // @@protoc_insertion_point(field_set:message.VerifyRes.error)
 }
 
 // string email = 2;
-inline void VarifyRes::clear_email() {
+inline void VerifyRes::clear_email() {
   email_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& VarifyRes::email() const {
-  // @@protoc_insertion_point(field_get:message.VarifyRes.email)
+inline const std::string& VerifyRes::email() const {
+  // @@protoc_insertion_point(field_get:message.VerifyRes.email)
   return _internal_email();
 }
-inline void VarifyRes::set_email(const std::string& value) {
+inline void VerifyRes::set_email(const std::string& value) {
   _internal_set_email(value);
-  // @@protoc_insertion_point(field_set:message.VarifyRes.email)
+  // @@protoc_insertion_point(field_set:message.VerifyRes.email)
 }
-inline std::string* VarifyRes::mutable_email() {
-  // @@protoc_insertion_point(field_mutable:message.VarifyRes.email)
+inline std::string* VerifyRes::mutable_email() {
+  // @@protoc_insertion_point(field_mutable:message.VerifyRes.email)
   return _internal_mutable_email();
 }
-inline const std::string& VarifyRes::_internal_email() const {
+inline const std::string& VerifyRes::_internal_email() const {
   return email_.Get();
 }
-inline void VarifyRes::_internal_set_email(const std::string& value) {
+inline void VerifyRes::_internal_set_email(const std::string& value) {
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void VarifyRes::set_email(std::string&& value) {
+inline void VerifyRes::set_email(std::string&& value) {
   
   email_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:message.VarifyRes.email)
+  // @@protoc_insertion_point(field_set_rvalue:message.VerifyRes.email)
 }
-inline void VarifyRes::set_email(const char* value) {
+inline void VerifyRes::set_email(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:message.VarifyRes.email)
+  // @@protoc_insertion_point(field_set_char:message.VerifyRes.email)
 }
-inline void VarifyRes::set_email(const char* value,
+inline void VerifyRes::set_email(const char* value,
     size_t size) {
   
   email_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:message.VarifyRes.email)
+  // @@protoc_insertion_point(field_set_pointer:message.VerifyRes.email)
 }
-inline std::string* VarifyRes::_internal_mutable_email() {
+inline std::string* VerifyRes::_internal_mutable_email() {
   
   return email_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* VarifyRes::release_email() {
-  // @@protoc_insertion_point(field_release:message.VarifyRes.email)
+inline std::string* VerifyRes::release_email() {
+  // @@protoc_insertion_point(field_release:message.VerifyRes.email)
   return email_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void VarifyRes::set_allocated_email(std::string* email) {
+inline void VerifyRes::set_allocated_email(std::string* email) {
   if (email != nullptr) {
     
   } else {
@@ -877,61 +877,61 @@ inline void VarifyRes::set_allocated_email(std::string* email) {
   }
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:message.VarifyRes.email)
+  // @@protoc_insertion_point(field_set_allocated:message.VerifyRes.email)
 }
 
 // string code = 3;
-inline void VarifyRes::clear_code() {
+inline void VerifyRes::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& VarifyRes::code() const {
-  // @@protoc_insertion_point(field_get:message.VarifyRes.code)
+inline const std::string& VerifyRes::code() const {
+  // @@protoc_insertion_point(field_get:message.VerifyRes.code)
   return _internal_code();
 }
-inline void VarifyRes::set_code(const std::string& value) {
+inline void VerifyRes::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:message.VarifyRes.code)
+  // @@protoc_insertion_point(field_set:message.VerifyRes.code)
 }
-inline std::string* VarifyRes::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:message.VarifyRes.code)
+inline std::string* VerifyRes::mutable_code() {
+  // @@protoc_insertion_point(field_mutable:message.VerifyRes.code)
   return _internal_mutable_code();
 }
-inline const std::string& VarifyRes::_internal_code() const {
+inline const std::string& VerifyRes::_internal_code() const {
   return code_.Get();
 }
-inline void VarifyRes::_internal_set_code(const std::string& value) {
+inline void VerifyRes::_internal_set_code(const std::string& value) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void VarifyRes::set_code(std::string&& value) {
+inline void VerifyRes::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:message.VarifyRes.code)
+  // @@protoc_insertion_point(field_set_rvalue:message.VerifyRes.code)
 }
-inline void VarifyRes::set_code(const char* value) {
+inline void VerifyRes::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:message.VarifyRes.code)
+  // @@protoc_insertion_point(field_set_char:message.VerifyRes.code)
 }
-inline void VarifyRes::set_code(const char* value,
+inline void VerifyRes::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:message.VarifyRes.code)
+  // @@protoc_insertion_point(field_set_pointer:message.VerifyRes.code)
 }
-inline std::string* VarifyRes::_internal_mutable_code() {
+inline std::string* VerifyRes::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* VarifyRes::release_code() {
-  // @@protoc_insertion_point(field_release:message.VarifyRes.code)
+inline std::string* VerifyRes::release_code() {
+  // @@protoc_insertion_point(field_release:message.VerifyRes.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void VarifyRes::set_allocated_code(std::string* code) {
+inline void VerifyRes::set_allocated_code(std::string* code) {
   if (code != nullptr) {
     
   } else {
@@ -939,109 +939,109 @@ inline void VarifyRes::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:message.VarifyRes.code)
+  // @@protoc_insertion_point(field_set_allocated:message.VerifyRes.code)
 }
 
 // -------------------------------------------------------------------
 
-// GetStatusServiceReq
+// GetChatServerReq
 
 // int32 uid = 1;
-inline void GetStatusServiceReq::clear_uid() {
+inline void GetChatServerReq::clear_uid() {
   uid_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 GetStatusServiceReq::_internal_uid() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetChatServerReq::_internal_uid() const {
   return uid_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 GetStatusServiceReq::uid() const {
-  // @@protoc_insertion_point(field_get:message.GetStatusServiceReq.uid)
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetChatServerReq::uid() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerReq.uid)
   return _internal_uid();
 }
-inline void GetStatusServiceReq::_internal_set_uid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void GetChatServerReq::_internal_set_uid(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   uid_ = value;
 }
-inline void GetStatusServiceReq::set_uid(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void GetChatServerReq::set_uid(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_uid(value);
-  // @@protoc_insertion_point(field_set:message.GetStatusServiceReq.uid)
+  // @@protoc_insertion_point(field_set:message.GetChatServerReq.uid)
 }
 
 // -------------------------------------------------------------------
 
-// GetStatusServiceRes
+// GetChatServerRes
 
 // int32 error = 1;
-inline void GetStatusServiceRes::clear_error() {
+inline void GetChatServerRes::clear_error() {
   error_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 GetStatusServiceRes::_internal_error() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetChatServerRes::_internal_error() const {
   return error_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 GetStatusServiceRes::error() const {
-  // @@protoc_insertion_point(field_get:message.GetStatusServiceRes.error)
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetChatServerRes::error() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRes.error)
   return _internal_error();
 }
-inline void GetStatusServiceRes::_internal_set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void GetChatServerRes::_internal_set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   error_ = value;
 }
-inline void GetStatusServiceRes::set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void GetChatServerRes::set_error(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_error(value);
-  // @@protoc_insertion_point(field_set:message.GetStatusServiceRes.error)
+  // @@protoc_insertion_point(field_set:message.GetChatServerRes.error)
 }
 
 // string host = 2;
-inline void GetStatusServiceRes::clear_host() {
+inline void GetChatServerRes::clear_host() {
   host_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetStatusServiceRes::host() const {
-  // @@protoc_insertion_point(field_get:message.GetStatusServiceRes.host)
+inline const std::string& GetChatServerRes::host() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRes.host)
   return _internal_host();
 }
-inline void GetStatusServiceRes::set_host(const std::string& value) {
+inline void GetChatServerRes::set_host(const std::string& value) {
   _internal_set_host(value);
-  // @@protoc_insertion_point(field_set:message.GetStatusServiceRes.host)
+  // @@protoc_insertion_point(field_set:message.GetChatServerRes.host)
 }
-inline std::string* GetStatusServiceRes::mutable_host() {
-  // @@protoc_insertion_point(field_mutable:message.GetStatusServiceRes.host)
+inline std::string* GetChatServerRes::mutable_host() {
+  // @@protoc_insertion_point(field_mutable:message.GetChatServerRes.host)
   return _internal_mutable_host();
 }
-inline const std::string& GetStatusServiceRes::_internal_host() const {
+inline const std::string& GetChatServerRes::_internal_host() const {
   return host_.Get();
 }
-inline void GetStatusServiceRes::_internal_set_host(const std::string& value) {
+inline void GetChatServerRes::_internal_set_host(const std::string& value) {
   
   host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetStatusServiceRes::set_host(std::string&& value) {
+inline void GetChatServerRes::set_host(std::string&& value) {
   
   host_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:message.GetStatusServiceRes.host)
+  // @@protoc_insertion_point(field_set_rvalue:message.GetChatServerRes.host)
 }
-inline void GetStatusServiceRes::set_host(const char* value) {
+inline void GetChatServerRes::set_host(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:message.GetStatusServiceRes.host)
+  // @@protoc_insertion_point(field_set_char:message.GetChatServerRes.host)
 }
-inline void GetStatusServiceRes::set_host(const char* value,
+inline void GetChatServerRes::set_host(const char* value,
     size_t size) {
   
   host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:message.GetStatusServiceRes.host)
+  // @@protoc_insertion_point(field_set_pointer:message.GetChatServerRes.host)
 }
-inline std::string* GetStatusServiceRes::_internal_mutable_host() {
+inline std::string* GetChatServerRes::_internal_mutable_host() {
   
   return host_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetStatusServiceRes::release_host() {
-  // @@protoc_insertion_point(field_release:message.GetStatusServiceRes.host)
+inline std::string* GetChatServerRes::release_host() {
+  // @@protoc_insertion_point(field_release:message.GetChatServerRes.host)
   return host_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetStatusServiceRes::set_allocated_host(std::string* host) {
+inline void GetChatServerRes::set_allocated_host(std::string* host) {
   if (host != nullptr) {
     
   } else {
@@ -1049,61 +1049,61 @@ inline void GetStatusServiceRes::set_allocated_host(std::string* host) {
   }
   host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), host,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:message.GetStatusServiceRes.host)
+  // @@protoc_insertion_point(field_set_allocated:message.GetChatServerRes.host)
 }
 
 // string port = 3;
-inline void GetStatusServiceRes::clear_port() {
+inline void GetChatServerRes::clear_port() {
   port_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetStatusServiceRes::port() const {
-  // @@protoc_insertion_point(field_get:message.GetStatusServiceRes.port)
+inline const std::string& GetChatServerRes::port() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRes.port)
   return _internal_port();
 }
-inline void GetStatusServiceRes::set_port(const std::string& value) {
+inline void GetChatServerRes::set_port(const std::string& value) {
   _internal_set_port(value);
-  // @@protoc_insertion_point(field_set:message.GetStatusServiceRes.port)
+  // @@protoc_insertion_point(field_set:message.GetChatServerRes.port)
 }
-inline std::string* GetStatusServiceRes::mutable_port() {
-  // @@protoc_insertion_point(field_mutable:message.GetStatusServiceRes.port)
+inline std::string* GetChatServerRes::mutable_port() {
+  // @@protoc_insertion_point(field_mutable:message.GetChatServerRes.port)
   return _internal_mutable_port();
 }
-inline const std::string& GetStatusServiceRes::_internal_port() const {
+inline const std::string& GetChatServerRes::_internal_port() const {
   return port_.Get();
 }
-inline void GetStatusServiceRes::_internal_set_port(const std::string& value) {
+inline void GetChatServerRes::_internal_set_port(const std::string& value) {
   
   port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetStatusServiceRes::set_port(std::string&& value) {
+inline void GetChatServerRes::set_port(std::string&& value) {
   
   port_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:message.GetStatusServiceRes.port)
+  // @@protoc_insertion_point(field_set_rvalue:message.GetChatServerRes.port)
 }
-inline void GetStatusServiceRes::set_port(const char* value) {
+inline void GetChatServerRes::set_port(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:message.GetStatusServiceRes.port)
+  // @@protoc_insertion_point(field_set_char:message.GetChatServerRes.port)
 }
-inline void GetStatusServiceRes::set_port(const char* value,
+inline void GetChatServerRes::set_port(const char* value,
     size_t size) {
   
   port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:message.GetStatusServiceRes.port)
+  // @@protoc_insertion_point(field_set_pointer:message.GetChatServerRes.port)
 }
-inline std::string* GetStatusServiceRes::_internal_mutable_port() {
+inline std::string* GetChatServerRes::_internal_mutable_port() {
   
   return port_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetStatusServiceRes::release_port() {
-  // @@protoc_insertion_point(field_release:message.GetStatusServiceRes.port)
+inline std::string* GetChatServerRes::release_port() {
+  // @@protoc_insertion_point(field_release:message.GetChatServerRes.port)
   return port_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetStatusServiceRes::set_allocated_port(std::string* port) {
+inline void GetChatServerRes::set_allocated_port(std::string* port) {
   if (port != nullptr) {
     
   } else {
@@ -1111,61 +1111,61 @@ inline void GetStatusServiceRes::set_allocated_port(std::string* port) {
   }
   port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), port,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:message.GetStatusServiceRes.port)
+  // @@protoc_insertion_point(field_set_allocated:message.GetChatServerRes.port)
 }
 
 // string token = 4;
-inline void GetStatusServiceRes::clear_token() {
+inline void GetChatServerRes::clear_token() {
   token_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetStatusServiceRes::token() const {
-  // @@protoc_insertion_point(field_get:message.GetStatusServiceRes.token)
+inline const std::string& GetChatServerRes::token() const {
+  // @@protoc_insertion_point(field_get:message.GetChatServerRes.token)
   return _internal_token();
 }
-inline void GetStatusServiceRes::set_token(const std::string& value) {
+inline void GetChatServerRes::set_token(const std::string& value) {
   _internal_set_token(value);
-  // @@protoc_insertion_point(field_set:message.GetStatusServiceRes.token)
+  // @@protoc_insertion_point(field_set:message.GetChatServerRes.token)
 }
-inline std::string* GetStatusServiceRes::mutable_token() {
-  // @@protoc_insertion_point(field_mutable:message.GetStatusServiceRes.token)
+inline std::string* GetChatServerRes::mutable_token() {
+  // @@protoc_insertion_point(field_mutable:message.GetChatServerRes.token)
   return _internal_mutable_token();
 }
-inline const std::string& GetStatusServiceRes::_internal_token() const {
+inline const std::string& GetChatServerRes::_internal_token() const {
   return token_.Get();
 }
-inline void GetStatusServiceRes::_internal_set_token(const std::string& value) {
+inline void GetChatServerRes::_internal_set_token(const std::string& value) {
   
   token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetStatusServiceRes::set_token(std::string&& value) {
+inline void GetChatServerRes::set_token(std::string&& value) {
   
   token_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:message.GetStatusServiceRes.token)
+  // @@protoc_insertion_point(field_set_rvalue:message.GetChatServerRes.token)
 }
-inline void GetStatusServiceRes::set_token(const char* value) {
+inline void GetChatServerRes::set_token(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:message.GetStatusServiceRes.token)
+  // @@protoc_insertion_point(field_set_char:message.GetChatServerRes.token)
 }
-inline void GetStatusServiceRes::set_token(const char* value,
+inline void GetChatServerRes::set_token(const char* value,
     size_t size) {
   
   token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:message.GetStatusServiceRes.token)
+  // @@protoc_insertion_point(field_set_pointer:message.GetChatServerRes.token)
 }
-inline std::string* GetStatusServiceRes::_internal_mutable_token() {
+inline std::string* GetChatServerRes::_internal_mutable_token() {
   
   return token_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetStatusServiceRes::release_token() {
-  // @@protoc_insertion_point(field_release:message.GetStatusServiceRes.token)
+inline std::string* GetChatServerRes::release_token() {
+  // @@protoc_insertion_point(field_release:message.GetChatServerRes.token)
   return token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetStatusServiceRes::set_allocated_token(std::string* token) {
+inline void GetChatServerRes::set_allocated_token(std::string* token) {
   if (token != nullptr) {
     
   } else {
@@ -1173,7 +1173,7 @@ inline void GetStatusServiceRes::set_allocated_token(std::string* token) {
   }
   token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), token,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:message.GetStatusServiceRes.token)
+  // @@protoc_insertion_point(field_set_allocated:message.GetChatServerRes.token)
 }
 
 #ifdef __GNUC__

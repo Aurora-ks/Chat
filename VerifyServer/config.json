@@ -1,9 +1,9 @@
 {
     "server":{
-        "host":"127.0.0.1",
-        "port":10086
+        "host":"0.0.0.0",
+        "port":"10086"
     },
-    "varify":{
+    "verify":{
         "host":"smtp.qq.com",
         "port":465
     },

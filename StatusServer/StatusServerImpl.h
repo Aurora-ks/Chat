@@ -6,8 +6,8 @@ using grpc::Server;
 using grpc::ServerContext;
 using grpc::Status;
 using message::StatusService;
-using message::GetStatusServiceReq;
-using message::GetStatusServiceRes;
+using message::GetChatServerReq;
+using message::GetChatServerRes;
 
 struct ChatServer
 {
@@ -19,7 +19,7 @@ class StatusServerImpl : public StatusService::Service
 {
 public:
 	StatusServerImpl();
-	Status GetChatServer(ServerContext* context, const GetStatusServiceReq *req, GetStatusServiceRes* res) override;
+	Status GetChatServer(ServerContext* context, const GetChatServerReq*req, GetChatServerRes* res) override;
 private:
 	std::vector<ChatServer> servers_;
 	int index_;
