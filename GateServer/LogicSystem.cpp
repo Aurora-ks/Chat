@@ -78,7 +78,7 @@ LogicSystem::LogicSystem()
 				return;
 			}
 			//—È÷§¬Î≤ª∆•≈‰
-			if (*VerifyCode != request["verifycode"].asString())
+			if (VerifyCode.value() != request["verifycode"].asString())
 			{
 				//Debug
 				cout << "Verifycode Error\n";

@@ -56,3 +56,10 @@ const host = config.serverHost+':'+config.serverPort;
 server.bindAsync(host, grpc.ServerCredentials.createInsecure(), () => {
 	console.log("verify server started on ", host);
 });
+
+process.on('SIGINT', async () => {
+	server.forceShutdown();
+	console.log('Server shut down');
+	redis.quit();
+	process.exit(0);
+  });

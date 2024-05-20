@@ -131,7 +131,7 @@ void RegisterDialog::on_RegisterButton_clicked()
     registerJson["email"] = ui->EmailEdit->text();
     registerJson["password"] = ui->PwdEdit->text();
     registerJson["confirm"] = ui->Pwd1Edit->text();
-    registerJson["varifycode"] = ui->CodeEdit->text();
+    registerJson["verifycode"] = ui->CodeEdit->text();
     HttpManager::GetInstance()->PostRequest(QUrl(HttpManager::GetPrefix()+"/register"),
                                             registerJson, RequestID::ID_USER_REG);
 }
